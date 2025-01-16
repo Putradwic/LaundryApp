@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".laundry">
+    tools:context=".laundry"
+    android:theme="@style/Base.Theme.Laundry">
 
     <TextView
         android:id="@+id/tv_sambutan"
