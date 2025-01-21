@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.text.SimpleDateFormat
@@ -14,6 +15,8 @@ class laundry : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_laundry)
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
         val tv_sambutan : TextView = findViewById(R.id.tv_sambutan)
         val tv_tanggal : TextView = findViewById(R.id.tv_tanggal)
@@ -30,7 +33,7 @@ class laundry : AppCompatActivity() {
 
         tv_sambutan.text = sambutan
 
-        val tanggal_format = SimpleDateFormat("EEE, dd MMMM yyyy", Locale("id"))
+        val tanggal_format = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("id"))
         val tanggal_sekarang = tanggal_format.format(Date())
         tv_tanggal.text = tanggal_sekarang
 

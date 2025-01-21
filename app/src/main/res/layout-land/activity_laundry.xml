@@ -9,6 +9,7 @@
     android:theme="@style/Base.Theme.Laundry">
 
     <TextView
+        style="@style/colortext"
         android:id="@+id/tv_sambutan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
         />
 
     <TextView
+        style="@style/colortext"
         android:id="@+id/tv_tanggal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.cardview.widget.CardView
+            style="@style/colorcard"
             android:id="@+id/card_estimasi"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -69,6 +72,7 @@
                     android:layout_marginVertical="10dp">
 
                     <TextView
+                        style="@style/colortext"
                         android:id="@+id/tv_estimasi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -79,6 +83,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:id="@+id/tv_nominal_estimasi"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -107,6 +112,7 @@
                     android:layout_marginBottom="10dp">
 
                     <androidx.cardview.widget.CardView
+                        style="@style/colorcard"
                         android:id="@+id/card_transaksi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -127,6 +133,7 @@
                                 />
 
                             <TextView
+                                style="@style/colortext"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -138,6 +145,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        style="@style/colorcard"
                         android:id="@+id/card_pelanggan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -158,6 +166,7 @@
                                 />
 
                             <TextView
+                                style="@style/colortext"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -169,6 +178,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        style="@style/colorcard"
                         android:id="@+id/card_laporan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -189,6 +199,7 @@
                                 />
 
                             <TextView
+                                style="@style/colortext"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
@@ -249,6 +260,7 @@
             android:layout_weight="1">
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardakun"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -273,6 +285,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Akun"
@@ -284,6 +297,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardlayanan"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -308,6 +322,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Layanan"
@@ -319,6 +334,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardtambahan"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -343,6 +359,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tambahan"
@@ -362,6 +379,7 @@
             android:layout_weight="1">
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardpegawai"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -386,6 +404,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Pegawai"
@@ -397,6 +416,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardcabang"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -421,6 +441,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Cabang"
@@ -432,6 +453,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                style="@style/colorcard"
                 android:id="@+id/cardprinter"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -456,6 +478,7 @@
                         />
 
                     <TextView
+                        style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Printer"
