@@ -10,9 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvdatapegawai"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingRecyclerViewAdapter"
-        tools:itemCount="10"
+        android:layout_height="wrap_content"
         tools:listitem="@layout/card_data_pegawai" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

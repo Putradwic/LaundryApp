@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laundry</string>
+    <string name="id_pelanggan">Customer ID</string>
+    <string name="nama_pelanggan">Customer Name</string>
+    <string name="alamat_pelanggan">Address</string>
+</resources>

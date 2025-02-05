@@ -10,10 +10,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvdatapelanggan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:listitem="@layout/card_data_pelanggan"
-        tools:itemCount="10"
-        tools:ignore="MissingRecyclerViewAdapter"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

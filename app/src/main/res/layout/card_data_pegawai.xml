@@ -8,76 +8,72 @@
     app:cardElevation="20dp"
     android:layout_margin="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvid_Pegawai"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="ID Pegawai"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/tvnama_pegawai"
-            app:layout_constraintEnd_toStartOf="@id/bt_titik3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/colorPrimary">
 
-        <ImageButton
-            android:id="@+id/bt_titik3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="none"
-            android:contentDescription="Menu opsi"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:scaleType="center"
-            android:src="@drawable/more_vert_24"
-            app:layout_constraintBaseline_toBaselineOf="@id/tvid_Pegawai"
-            app:layout_constraintBottom_toTopOf="@id/tvnama_pegawai"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvid_Pegawai" />
+            <TextView
+                android:id="@+id/tvid_pegawai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="ID_Pelanggan"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="15dp" />
+        </LinearLayout>
 
 
         <TextView
             android:id="@+id/tvnama_pegawai"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
             android:text="Nama Pegawai"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvposisi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bt_titik3" />
-
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/tvposisi"
-            android:layout_width="0dp"
+            android:id="@+id/tvalamat_pegawai"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Posisi"
-            android:textSize="14sp"
-            app:layout_constraintBottom_totopOf="@id/ly_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvnama_pegawai" />
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
+            android:text="Alamat"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvterdaftar_pelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
+            android:text="Terdaftar"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvcabang_pegawai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
+            android:text="Cabang"
+            android:textSize="14sp" />
+
 
         <LinearLayout
             android:id="@+id/ly_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/tvposisi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btn_lihat"
@@ -85,7 +81,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Lihat"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="3dp"/>
 
             <Button
                 android:id="@+id/btn_hubungi"
@@ -94,10 +92,9 @@
                 android:layout_weight="1"
                 android:text="Hubungi"
                 android:textColor="@android:color/white"
-                android:layout_marginStart="10dp" />
-
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="3dp"/>
         </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
