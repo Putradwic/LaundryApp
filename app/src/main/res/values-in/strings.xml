@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Laundry</string>
-    <string name="id_pelanggan">ID Pelanggan</string>
-    <string name="nama_pelanggan">Nama Pelanggan</string>
-    <string name="alamat_pelanggan">Alamat</string>
+    <string name="pelanggan_id">ID Pelanggan</string>
+    <string name="pelanggan_alamat">Alamat</string>
+    <string name="pelanggan_terdaftar">Terdaftar</string>
+    <string name="pelanggan_nama">Nama Pelanggan</string>
+    <string name="pelanggan_cabang">Cabang</string>
+    <string name="pelanggan_lihat">Lihat</string>
+    <string name="pelanggan_hubungi">Hubungi</string>
+    <string name="pegawai_id">ID Layanan</string>
+    <string name="pegawai_alamat">Alamat</string>
+    <string name="pegawai_nama">Nama Pegawai</string>
+    <string name="pegawai_terdaftar">Terdaftar</string>
+    <string name="pegawai_cabang">Cabang</string>
+    <string name="pegawai_lihat">Lihat</string>
+    <string name="pegawai_hubungi">Hubungi</string>
+    <string name="layanan_id">ID Layanan</string>
+    <string name="layanan_nama">Nama Layanan</string>
+    <string name="layanan_harga">Harga</string>
+    <string name="layanan_nama_cabang">Nama Cabang</string>
+    <string name="pelanggan_tambah_noHP">No HP</string>
+    <string name="validasi_tambah_pelanggan">Formulir harus diisi dengan lengkap</string>
+    <string name="berhasil_tambah_pelanggan">Data berhasil ditambahkan</string>
+    <string name="pelanggan_tambah_gagal">Data gagal ditambahkan</string>
 </resources>

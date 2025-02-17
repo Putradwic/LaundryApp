@@ -1,103 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="12dp"
     app:cardElevation="20dp"
     android:layout_margin="10dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/tvid_Pegawai"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="ID Pegawai"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/tvnama_pegawai"
-            app:layout_constraintEnd_toStartOf="@id/bt_titik3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/bt_titik3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="none"
-            android:contentDescription="Menu opsi"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:scaleType="center"
-            android:src="@drawable/more_vert_24"
-            app:layout_constraintBaseline_toBaselineOf="@id/tvid_Pegawai"
-            app:layout_constraintBottom_toTopOf="@id/tvnama_pegawai"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvid_Pegawai" />
-
-
-        <TextView
-            android:id="@+id/tvnama_pegawai"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Nama Pegawai"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvposisi"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bt_titik3" />
-
-
-        <TextView
-            android:id="@+id/tvposisi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Posisi"
-            android:textSize="14sp"
-            app:layout_constraintBottom_totopOf="@id/ly_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvnama_pegawai" />
-
-        <LinearLayout
-            android:id="@+id/ly_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/tvposisi"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-
-            <Button
-                android:id="@+id/btn_lihat"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Lihat"
-                android:textColor="@android:color/white" />
-
-            <Button
-                android:id="@+id/btn_hubungi"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Hubungi"
-                android:textColor="@android:color/white"
-                android:layout_marginStart="10dp" />
-
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

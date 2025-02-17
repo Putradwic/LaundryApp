@@ -7,7 +7,8 @@
     app:cardCornerRadius="12dp"
     app:cardElevation="20dp"
     android:layout_margin="10dp"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:id="@+id/card_data_pelanggan">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="@string/id_pelanggan"
+                android:text="@string/pelanggan_id"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:paddingHorizontal="15dp"/>
@@ -34,12 +35,12 @@
 
 
         <TextView
-            android:id="@+id/tvnama_pegawai"
+            android:id="@+id/tvnama_pelanggan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="3dp"
-            android:text="@string/nama_pelanggan"
+            android:text="@string/pelanggan_nama"
             android:textSize="14sp" />
 
         <TextView
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="3dp"
-            android:text="Alamat"
+            android:text="@string/pelanggan_alamat"
             android:textSize="14sp" />
 
         <TextView
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="3dp"
-            android:text="Terdaftar"
+            android:text="@string/pelanggan_terdaftar"
             android:textSize="14sp" />
 
         <TextView
@@ -66,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="3dp"
-            android:text="Cabang"
+            android:text="@string/pelanggan_cabang"
             android:textSize="14sp" />
 
 
@@ -81,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Lihat"
+                android:text="@string/pelanggan_lihat"
                 android:textColor="@android:color/white"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="3dp"/>
@@ -91,7 +92,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Hubungi"
+                android:text="@string/pelanggan_hubungi"
                 android:textColor="@android:color/white"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="3dp"/>

@@ -1,108 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layanan.tambah_layanan">
+    tools:context=".pelanggan.tambah_pelanggan"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvjudul_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/tvjudul_layanan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TAMBAH LAYANAN"
+        android:text="TAMBAH PELANGGAN"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvnama_tambah_layanan"/>
+        android:padding="10dp"
+        android:layout_marginVertical="10dp"/>
 
     <TextView
-        android:id="@+id/tvnama_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/tvnama_pelanggan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nama Layanan"
-        android:textSize="18sp"
         android:layout_marginHorizontal="35dp"
-        app:layout_constraintTop_toBottomOf="@id/tvjudul_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etnama_tambah_layanan"/>
+        android:text="Nama Lengkap"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_marginTop="10dp"/>
 
     <EditText
-        android:id="@+id/etnama_tambah_layanan"
+        android:id="@+id/etnama_pelanggan"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Nama Layanan"
         android:layout_marginHorizontal="35dp"
-        app:layout_constraintTop_toBottomOf="@id/tvnama_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvkategori_tambah_layanan"/>
+        android:background="@drawable/edittext"
+        android:hint="Nama Lengkap"
+        android:inputType="textPersonName"
+        android:padding="7dp"/>
 
     <TextView
-        android:id="@+id/tvkategori_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/tvalamat_pelanggan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kategori"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="35dp"
-        app:layout_constraintTop_toBottomOf="@id/etnama_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etkategori_tambah_layanan"/>
+        android:layout_marginTop="20dp"
+        android:text="Alamat"
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/etkategori_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/etalamat_pelanggan"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:hint="Kategori"
         android:layout_marginHorizontal="35dp"
-        app:layout_constraintTop_toBottomOf="@id/tvkategori_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tvdeskripsi_tambah_layanan"/>
+        android:background="@drawable/edittext"
+        android:hint="Alamat"
+        android:padding="7dp"/>
 
     <TextView
-        android:id="@+id/tvdeskripsi_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/tvnohp_pelanggan"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Deskripsi"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="35dp"
-        app:layout_constraintTop_toBottomOf="@id/etkategori_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/etdeskripsi_tambah_layanan"/>
+        android:layout_marginTop="20dp"
+        android:text="No HP Aktif"
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/etdeskripsi_tambah_layanan"
-        android:layout_width="0dp"
+        android:id="@+id/etnohp_pelanggan"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
-        android:hint="Deskripsi"
-        app:layout_constraintBottom_toTopOf="@id/bttambah"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvdeskripsi_tambah_layanan" />
+        android:background="@drawable/edittext"
+        android:hint="No HP Aktif"
+        android:inputType="phone"
+        android:padding="7dp"/>
 
+    <TextView
+        android:id="@+id/tvnama_cabang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginTop="20dp"
+        android:text="Cabang"
+        android:textSize="18sp" />
 
+    <EditText
+        android:id="@+id/etnama_cabang"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="35dp"
+        android:background="@drawable/edittext"
+        android:hint="Cabang"
+        android:inputType="phone"
+        android:padding="7dp"/>
 
     <Button
         android:id="@+id/bttambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tambah"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="50dp"
-        app:layout_constraintTop_toBottomOf="@id/etdeskripsi_tambah_layanan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:text="Tambah"
+        android:layout_gravity="center"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
