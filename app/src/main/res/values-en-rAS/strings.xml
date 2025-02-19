@@ -27,4 +27,8 @@
     <string name="pegawai_nohp">Phone Number</string>
     <string name="tambah_pelanggan_judul">Add Customer</string>
     <string name="detail_pelanggan">Customer Details</string>
+    <string name="nama_lengkap">Full Name</string>
+    <string name="add">Add</string>
+    <string name="tambah_pegawai_judul">Add workers</string>
+    <string name="tambah_layanan_judul">tambah</string>
 </resources>

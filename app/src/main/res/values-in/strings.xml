@@ -25,5 +25,10 @@
     <string name="pelanggan_tambah_gagal">Data gagal ditambahkan</string>
     <string name="pelanggan_nohp">No HP</string>
     <string name="pegawai_nohp">No HP</string>
-    <string name="tambah_pelanggan_judul">Tambah Plenggan</string>
+    <string name="tambah_pelanggan_judul">Tambah Pelanggan</string>
+    <string name="detail_pelanggan">Detail Pelanggan</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="add">Tambah</string>
+    <string name="tambah_pegawai_judul">Tambah Pekerja</string>
+    <string name="tambah_layanan_judul">Tambah Layanan</string>
 </resources>

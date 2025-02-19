@@ -25,7 +25,6 @@ class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
         holder.tvNama.text = item.nama_pegawai
         holder.tvNoHP.text = item.nohp_pegawai
         holder.tvAlamat.text = item.alamat_pegawai
-        holder.tvTerdaftar.text = item.terdaftar
         holder.tvcabang.text = item.cabang
 
         holder.cvCARD.setOnClickListener {
@@ -45,7 +44,6 @@ class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
         val tvNama: TextView = itemView.findViewById(R.id.tvnama_pegawai)
         val tvNoHP: TextView = itemView.findViewById(R.id.tvnohp_pegawai)
         val tvAlamat: TextView = itemView.findViewById(R.id.tvalamat_pegawai)
-        val tvTerdaftar: TextView = itemView.findViewById(R.id.tvterdaftar_pegawai)
         val btHubungi: Button = itemView.findViewById(R.id.btn_hubungi)
         val btLihat: Button = itemView.findViewById(R.id.btn_lihat)
         val tvcabang: TextView = itemView.findViewById(R.id.tvcabang_pegawai)

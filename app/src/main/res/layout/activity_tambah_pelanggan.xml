@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
-        android:text="Nama Lengkap"
+        android:text="@string/pelanggan_nama"
         android:textSize="18sp"
         android:padding="5dp"
         android:layout_marginTop="10dp"/>
@@ -35,7 +35,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Nama Lengkap"
+        android:hint="@string/pelanggan_nama"
         android:inputType="textPersonName"
         android:padding="7dp"/>
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
-        android:text="Alamat"
+        android:text="@string/pelanggan_alamat"
         android:textSize="18sp" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Alamat"
+        android:hint="@string/pegawai_alamat"
         android:padding="7dp"/>
 
     <TextView
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
-        android:text="No HP Aktif"
+        android:text="@string/pelanggan_nohp"
         android:textSize="18sp" />
 
     <EditText
@@ -72,7 +72,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="No HP Aktif"
+        android:hint="@string/pelanggan_nohp"
         android:inputType="phone"
         android:padding="7dp"/>
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
-        android:text="Cabang"
+        android:text="@string/pegawai_cabang"
         android:textSize="18sp" />
 
     <EditText
@@ -91,7 +91,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Cabang"
+        android:hint="@string/pegawai_cabang"
         android:padding="7dp"/>
 
     <Button
@@ -100,7 +100,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="50dp"
-        android:text="Tambah"
+        android:text="@string/add"
         android:layout_gravity="center"/>
 
 

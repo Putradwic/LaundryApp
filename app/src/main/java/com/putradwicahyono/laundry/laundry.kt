@@ -15,11 +15,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 import android.util.Log
 import com.google.firebase.database.*
+import com.putradwicahyono.laundry.layanan.data_layanan
 
 class laundry : AppCompatActivity() {
 
     lateinit var card_pelanggan: CardView
     lateinit var card_pegawai: CardView
+    lateinit var cardlayanan: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,6 +73,7 @@ class laundry : AppCompatActivity() {
     private fun init() {
         card_pelanggan = findViewById(R.id.card_pelanggan)
         card_pegawai = findViewById(R.id.cardpegawai)
+        cardlayanan = findViewById(R.id.cardlayanan)
 
     }
     private fun pindah(){
@@ -80,6 +83,10 @@ class laundry : AppCompatActivity() {
         }
         card_pegawai.setOnClickListener{
             val intent = Intent(this, data_pegawai::class.java)
+            startActivity(intent)
+        }
+        cardlayanan.setOnClickListener{
+            val intent = Intent(this, data_layanan::class.java)
             startActivity(intent)
         }
 

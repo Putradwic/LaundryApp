@@ -63,15 +63,6 @@
             android:text="@string/pegawai_alamat"
             android:textSize="14sp" />
 
-        <!-- Terdaftar Pegawai -->
-        <TextView
-            android:id="@+id/tvterdaftar_pegawai"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pegawai_terdaftar"
-            android:textSize="14sp" />
 
         <!-- Cabang Pegawai -->
         <TextView

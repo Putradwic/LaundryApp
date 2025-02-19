@@ -26,7 +26,6 @@ class data_pelanggan_adapter(private val listPelanggan: ArrayList<ModelPelanggan
         holder.tvNama.text = item.nama_pelanggan
         holder.tvAlamat.text = item.alamat_pelanggan
         holder.tvNoHP.text = item.nohp_pelanggan
-        holder.tvTerdaftar.text = item.terdaftar
         holder.tvcabang.text = item.cabang
         holder.cvCARD.setOnClickListener(){
         }
@@ -42,7 +41,6 @@ class data_pelanggan_adapter(private val listPelanggan: ArrayList<ModelPelanggan
         val tvNama = itemView.findViewById<TextView>(R.id.tvnama_pelanggan)
         val tvAlamat = itemView.findViewById<TextView>(R.id.tvalamat_pelanggan)
         val tvNoHP = itemView.findViewById<TextView>(R.id.tvnohp_pelanggan)
-        val tvTerdaftar = itemView.findViewById<TextView>(R.id.tvterdaftar_pelanggan)
         val btHubungi = itemView.findViewById<Button>(R.id.btn_hubungi)
         val btLihat = itemView.findViewById<Button>(R.id.btn_lihat)
         val tvcabang = itemView.findViewById<TextView>(R.id.tvcabang_pelanggan)

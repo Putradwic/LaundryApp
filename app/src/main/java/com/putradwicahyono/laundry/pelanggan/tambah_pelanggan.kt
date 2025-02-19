@@ -65,8 +65,7 @@ class tambah_pelanggan : AppCompatActivity() {
 
             val pelangganBaru = myRef.push()
             val pelangganId = pelangganBaru.key ?: "Unknown"
-            val timestamp = System.currentTimeMillis().toString()
-            val data = ModelPelanggan(pelangganId, nama, alamat, noHP, cabang, timestamp)
+            val data = ModelPelanggan(pelangganId, nama, alamat, noHP, cabang,)
 
             pelangganBaru.setValue(data)
                 .addOnSuccessListener {

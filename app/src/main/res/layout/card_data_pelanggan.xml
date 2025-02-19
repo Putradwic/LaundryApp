@@ -61,14 +61,6 @@
             android:text="@string/pelanggan_alamat"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvterdaftar_pelanggan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_terdaftar"
-            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tvcabang_pelanggan"

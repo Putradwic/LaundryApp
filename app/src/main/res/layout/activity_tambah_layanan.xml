@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/tambah_layanan"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pelanggan.tambah_pelanggan"
@@ -12,7 +12,7 @@
         android:id="@+id/tvjudul_layanan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TAMBAH PELANGGAN"
+        android:text="@string/tambah_layanan_judul"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
-        android:text="Nama Lengkap"
+        android:text="@string/nama_lengkap"
         android:textSize="18sp"
         android:padding="5dp"
         android:layout_marginTop="10dp"/>
@@ -35,7 +35,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Nama Lengkap"
+        android:hint="@string/nama_lengkap"
         android:inputType="textPersonName"
         android:padding="7dp"/>
 
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
-        android:text="Harga"
+        android:text="@string/layanan_harga"
         android:textSize="18sp" />
 
     <EditText
@@ -54,7 +54,7 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Harga"
+        android:hint="@string/layanan_harga"
         android:padding="7dp"/>
 
 
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="20dp"
-        android:text="Cabang"
+        android:text="@string/pegawai_cabang"
         android:textSize="18sp" />
 
     <EditText
@@ -73,8 +73,8 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
-        android:hint="Cabang"
-        android:inputType="phone"
+        android:hint="@string/pegawai_cabang"
+        android:inputType="numberDecimal"
         android:padding="7dp"/>
 
     <Button
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:paddingHorizontal="50dp"
-        android:text="Tambah"
+        android:text="@string/add"
         android:layout_gravity="center"/>
 
 
