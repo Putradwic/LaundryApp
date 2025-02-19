@@ -23,4 +23,8 @@
     <string name="validasi_tambah_pelanggan">Form must be completed</string>
     <string name="berhasil_tambah_pelanggan">Data added successfully</string>
     <string name="pelanggan_tambah_gagal">Data failed to be added</string>
+    <string name="pelanggan_nohp">Phone Number</string>
+    <string name="pegawai_nohp">Phone Number</string>
+    <string name="tambah_pelanggan_judul">Add Customer</string>
+    <string name="detail_pelanggan">Customer Details</string>
 </resources>

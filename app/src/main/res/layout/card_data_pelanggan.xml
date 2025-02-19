@@ -2,13 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_data_pelanggan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="12dp"
     app:cardElevation="20dp"
     android:layout_margin="10dp"
-    android:padding="10dp"
-    android:id="@+id/card_data_pelanggan">
+    android:padding="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,7 +33,6 @@
                 android:paddingHorizontal="15dp"/>
         </LinearLayout>
 
-
         <TextView
             android:id="@+id/tvnama_pelanggan"
             android:layout_width="match_parent"
@@ -41,6 +40,16 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="3dp"
             android:text="@string/pelanggan_nama"
+            android:textSize="14sp" />
+
+        <!-- Tambahkan TextView untuk nomor HP -->
+        <TextView
+            android:id="@+id/tvnohp_pelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="3dp"
+            android:text="@string/pelanggan_nohp"
             android:textSize="14sp" />
 
         <TextView
@@ -70,7 +79,6 @@
             android:text="@string/pelanggan_cabang"
             android:textSize="14sp" />
 
-
         <LinearLayout
             android:id="@+id/ly_button"
             android:layout_width="match_parent"
@@ -98,5 +106,4 @@
                 android:layout_marginVertical="3dp"/>
         </LinearLayout>
     </LinearLayout>
-
 </androidx.cardview.widget.CardView>

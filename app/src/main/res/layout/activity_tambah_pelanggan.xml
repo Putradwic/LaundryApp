@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/tambah_pelanggan"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pelanggan.tambah_pelanggan"
@@ -12,7 +12,7 @@
         android:id="@+id/tvjudul_tambah_pelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TAMBAH PELANGGAN"
+        android:text="@string/tambah_pelanggan_judul"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -92,7 +92,6 @@
         android:layout_marginHorizontal="35dp"
         android:background="@drawable/edittext"
         android:hint="Cabang"
-        android:inputType="phone"
         android:padding="7dp"/>
 
     <Button

@@ -51,8 +51,7 @@ class laundry : AppCompatActivity() {
         init()
         pindah()
 
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("test_connection")
+        val myRef = FirebaseDatabase.getInstance().getReference("test_connection")
 
         myRef.setValue("Cek koneksi Firebase!")
             .addOnSuccessListener {
@@ -62,7 +61,7 @@ class laundry : AppCompatActivity() {
                 Log.e("FirebaseCheck", "Gagal terhubung ke Firebase", it)
             }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.laundry)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

@@ -23,4 +23,7 @@
     <string name="validasi_tambah_pelanggan">Formulir harus diisi dengan lengkap</string>
     <string name="berhasil_tambah_pelanggan">Data berhasil ditambahkan</string>
     <string name="pelanggan_tambah_gagal">Data gagal ditambahkan</string>
+    <string name="pelanggan_nohp">No HP</string>
+    <string name="pegawai_nohp">No HP</string>
+    <string name="tambah_pelanggan_judul">Tambah Plenggan</string>
 </resources>
