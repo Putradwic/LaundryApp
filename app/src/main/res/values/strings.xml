@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name" translatable="false">Laundry</string>
+    <string name="pelanggan_id" translatable="false">id_pelanggan</string>
+    <string name="pelanggan_alamat" translatable="false">alamat_pelanggan</string>
+    <string name="pelanggan_terdaftar" translatable="false">terdaftar_pelanggan</string>
+    <string name="pelanggan_nama" translatable="false">nama_pelanggan</string>
+    <string name="pelanggan_cabang" translatable="false">cabang_pelanggan</string>
+    <string name="pelanggan_lihat" translatable="false">lihat_pelanggan</string>
+    <string name="pelanggan_hubungi" translatable="false">hubungi_pelanggan</string>
+    <string name="pegawai_id" translatable="false">id_pegawai</string>
+    <string name="pegawai_alamat" translatable="false">alamat_pegawai</string>
+    <string name="pegawai_nama" translatable="false">nama_pegawai</string>
+    <string name="pegawai_terdaftar" translatable="false">terdaftar_pegawai</string>
+    <string name="pegawai_cabang" translatable="false">cabang_pegawai</string>
+    <string name="pegawai_lihat" translatable="false">lihat_pegawai</string>
+    <string name="pegawai_hubungi" translatable="false">hubungi_pegawai</string>
+    <string name="layanan_id" translatable="false">id_layanan</string>
+    <string name="layanan_nama" translatable="false">nama_layanan</string>
+    <string name="layanan_harga" translatable="false">harga_layanan</string>
+    <string name="layanan_nama_cabang" translatable="false">nama_cabang_layanan</string>
+    <string name="pelanggan_tambah_noHP" translatable="false">tambah_pelanggan_noHP</string>
+    <string name="validasi_tambah_pelanggan" translatable="false">tambah_pelanggan_validsi</string>
+    <string name="berhasil_tambah_pelanggan" translatable="false">pelanggan_tambah_berhasil</string>
+    <string name="pelanggan_tambah_gagal" translatable="false">gagal_tambah_pelanggan</string>
+    <string name="pelanggan_nohp" translatable="false">nohp_pelanggan</string>
+    <string name="pegawai_nohp" translatable="false">nohp_pegawai</string>
+    <string name="tambah_pelanggan_judul" translatable="false">judul_tambah_pelanggan</string>
+    <string name="detail_pelanggan" translatable="false">pelanggan_detail</string>
+    <string name="nama_lengkap" translatable="false">lengkap_nama</string>
+    <string name="add" translatable="false">tambah</string>
+    <string name="tambah_pegawai_judul" translatable="false">judul_pegawai_tambah</string>
+    <string name="tambah_layanan_judul">judul_layanan_tambah</string>
+    <string name="judul_layanan">layanan_judul</string>
+</resources>

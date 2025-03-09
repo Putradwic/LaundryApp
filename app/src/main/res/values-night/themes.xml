@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Laundry" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+    </style>
+    <style name="colorcard">
+        <item name="cardBackgroundColor">?attr/colorPrimary</item>
+    </style>
+    <style name="colortext">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+    <style name="backgroundimage">
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+</resources>
