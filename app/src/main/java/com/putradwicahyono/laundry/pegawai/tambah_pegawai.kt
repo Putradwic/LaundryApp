@@ -26,6 +26,8 @@ class tambah_pegawai : AppCompatActivity() {
     lateinit var etCabang: EditText
     lateinit var btSimpan: Button
 
+    var idPegawai: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,12 +35,16 @@ class tambah_pegawai : AppCompatActivity() {
 
         init()
         simpan()
+        btSimpan.setOnClickListener {
+            getData()
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pegawai)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
+
     fun init() {
         tvJudul = findViewById(R.id.tvjudul_tambah_pegawai)
         etNama = findViewById(R.id.etnama_pegawai)
@@ -60,6 +66,7 @@ class tambah_pegawai : AppCompatActivity() {
                 Toast.makeText(this, "Semua data harus diisi!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
 
             val pegawaiBaru = myRef.push()
             val pegawaiId = pegawaiBaru.key ?: "Unknown"
@@ -84,4 +91,68 @@ class tambah_pegawai : AppCompatActivity() {
                 }
         }
     }
+
+
+
+
+    fun getData() {
+        idPegawai = intent.getStringExtra("idPegawai").toString()
+        val judul = intent.getStringExtra("judul")
+        val nama = intent.getStringExtra("namaPegawai")
+        val alamat = intent.getStringExtra("alamatPegawai")
+        val hp = intent.getStringExtra("noHPPegawai")
+        val cabang = intent.getStringExtra("cabang")
+
+        tvJudul.text = judul
+        etNama.setText(nama)
+        etAlamat.setText(alamat)
+        etNoHP.setText(hp)
+        etCabang.setText(cabang)
+        if (!tvJudul.text.equals("Tambah Pegawai")) {
+            if (judul.equals("Edit Pegawai"))
+                mati()
+            btSimpan.text = "Sunting"
+        } else {
+            hidup()
+            etNama.requestFocus()
+            btSimpan
+        }
+        update()
+
+    }
+    fun mati() {
+        etNama.isEnabled = false
+        etAlamat.isEnabled = false
+        etNoHP.isEnabled = false
+        etCabang.isEnabled = false
+    }
+    fun hidup() {
+        etNama.isEnabled = true
+        etAlamat.isEnabled = true
+        etNoHP.isEnabled = true
+        etCabang.isEnabled = true
+    }
+
+    fun update(){
+        val pegawaiRef = database.getReference("Pegawai").child(idPegawai)
+        val data = ModelPegawai(
+            idPegawai,
+            etNama.text.toString(),
+            etAlamat.text.toString(),
+            etNoHP.text.toString(),
+            etCabang.text.toString(),)
+
+        val updateData = mutableMapOf<String, Any>()
+        updateData["namaPegawai"] = data.nama_pegawai.toString()
+        updateData["alamatPegawai"] = data.alamat_pegawai.toString()
+        updateData["noHPPegawai"] = data.nohp_pegawai.toString()
+        updateData["cabang"] = data.cabang.toString()
+        pegawaiRef.updateChildren(updateData).addOnSuccessListener {
+            Toast.makeText(this@tambah_pegawai, "Data Pegawai Berhasil diperbarui", Toast.LENGTH_SHORT).show()
+            finish()
+        }.addOnSuccessListener {
+            Toast.makeText(this@tambah_pegawai, "Data Pegawai Gagal diperbarui", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

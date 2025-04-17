@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#000</color>
+    <color name="black">#fff</color>
     <color name="colorPrimary">#BB86FC</color>
     <color name="colorOnPrimary">#F8F1F1</color>
+    <color name="colorstriped">#FFD600</color>
+    <color name="colorstriped2">#FFEA00</color>
+<!--    <color name="belum">#FFCDD2</color>-->
+<!--    <color name="udah">#E1F5FE</color>-->
+<!--    <color name="selesai">#E8F5E9</color>-->
 </resources>

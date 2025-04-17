@@ -20,12 +20,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/detail_pelanggan"
-                    android:padding="10dp"
-                    android:textSize="20sp"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:id="@+id/tvid_pelanggan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="@string/detail_pelanggan"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="15dp"/>
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -37,15 +48,15 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_nama"
                         android:padding="10dp"/>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_nama"
                         android:padding="10dp"/>
                 </LinearLayout>
 
@@ -59,15 +70,15 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_nohp"
                         android:padding="10dp"/>
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="2"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_nohp"
                         android:padding="10dp"/>
                 </LinearLayout>
                 <LinearLayout
@@ -80,16 +91,62 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_alamat"
                         android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:textSize="16sp"
+                        android:text="@string/pelanggan_alamat"
+                        android:padding="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="16sp"
-                        android:text="@string/detail_pelanggan"
+                        android:text="@string/pelanggan_terdaftar"
                         android:padding="10dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="10dp"
+                        android:text="@string/pelanggan_terdaftar"
+                        android:textSize="16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ly_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_lihat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pelanggan_edit"
+                        android:textColor="@android:color/white"
+                        android:layout_marginHorizontal="10dp"/>
+
+                    <Button
+                        android:id="@+id/btn_hubungi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/pelanggan_hapus"
+                        android:textColor="@android:color/white"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="3dp"/>
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

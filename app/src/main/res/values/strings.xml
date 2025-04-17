@@ -15,8 +15,8 @@
     <string name="pegawai_lihat" translatable="false">lihat_pegawai</string>
     <string name="pegawai_hubungi" translatable="false">hubungi_pegawai</string>
     <string name="layanan_id" translatable="false">id_layanan</string>
-    <string name="layanan_nama" translatable="false">nama_layanan</string>
-    <string name="layanan_harga" translatable="false">harga_layanan</string>
+    <string name="layanan_nama" translatable="false">nama_layanan :</string>
+    <string name="layanan_harga" translatable="false">harga_layanan :</string>
     <string name="layanan_nama_cabang" translatable="false">nama_cabang_layanan</string>
     <string name="pelanggan_tambah_noHP" translatable="false">tambah_pelanggan_noHP</string>
     <string name="validasi_tambah_pelanggan" translatable="false">tambah_pelanggan_validsi</string>
@@ -31,4 +31,6 @@
     <string name="tambah_pegawai_judul" translatable="false">judul_pegawai_tambah</string>
     <string name="tambah_layanan_judul">judul_layanan_tambah</string>
     <string name="judul_layanan">layanan_judul</string>
+    <string name="pelanggan_edit" translatable="false">edit_pelanggan</string>
+    <string name="pelanggan_hapus" translatable="false">hapus_pelanggan</string>
 </resources>

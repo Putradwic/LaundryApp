@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header: ID Pegawai -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,9 +22,20 @@
             android:background="@color/colorPrimary">
 
             <TextView
-                android:id="@+id/tvid_pegawai"
-                android:layout_width="match_parent"
+                android:id="@+id/tvnama_pegawai"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:text="@string/pegawai_nama"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvid_pegawai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:layout_margin="5dp"
                 android:text="@string/pegawai_id"
                 android:textSize="18sp"
@@ -33,48 +43,81 @@
                 android:paddingHorizontal="15dp" />
         </LinearLayout>
 
-        <!-- Nama Pegawai -->
-        <TextView
-            android:id="@+id/tvnama_pegawai"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pegawai_nama"
-            android:textSize="14sp" />
+            android:orientation="horizontal">
 
-        <!-- Nomor HP Pegawai (Ditambahkan) -->
-        <TextView
-            android:id="@+id/tvnohp_pegawai"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_nohp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvnohp_pegawai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_nohp"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pegawai_nohp"
-            android:textSize="14sp" />
+            android:orientation="horizontal">
 
-        <!-- Alamat Pegawai -->
-        <TextView
-            android:id="@+id/tvalamat_pegawai"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_alamat"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvalamat_pegawai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_alamat"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pegawai_alamat"
-            android:textSize="14sp" />
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_cabang"
+                android:textSize="14sp" />
 
-        <!-- Cabang Pegawai -->
-        <TextView
-            android:id="@+id/tvcabang_pegawai"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pegawai_cabang"
-            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tvcabang_pegawai"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="3dp"
+                android:text="@string/pegawai_cabang"
+                android:textSize="14sp" />
+        </LinearLayout>
 
-        <!-- Tombol Lihat dan Hubungi -->
         <LinearLayout
             android:id="@+id/ly_button"
             android:layout_width="match_parent"
