@@ -23,12 +23,14 @@
             android:background="@color/colorPrimary">
 
             <TextView
-                android:id="@+id/tvnama_pelanggan"
+                android:id="@+id/JudulCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:text="@string/pelanggan_nama"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="5dp"
+                android:padding="2dp"
+                android:text="@string/DataPelanggan"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 />
@@ -41,7 +43,58 @@
                 android:layout_margin="5dp"
                 android:text="@string/pelanggan_id"
                 android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/Nama"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvnama_pelanggan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:text="@string/Nama"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textAlignment="textEnd"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="@string/Alamat"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvalamat_pelanggan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:text="@string/Alamat"
+                android:textSize="12sp"
+                android:textAlignment="textEnd"/>
         </LinearLayout>
 
     <LinearLayout
@@ -53,9 +106,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_nohp"
+            android:padding="10dp"
+            android:text="@string/NoHP"
             android:textSize="12sp" />
 
         <TextView
@@ -63,12 +115,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_nohp"
+            android:padding="10dp"
+            android:text="@string/NoHP"
             android:textSize="12sp"
             android:textAlignment="textEnd"/>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,35 +131,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_alamat"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/tvalamat_pelanggan"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_alamat"
-            android:textSize="12sp"
-            android:textAlignment="textEnd"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_cabang"
+            android:padding="10dp"
+            android:text="@string/Cabang"
             android:textSize="12sp" />
 
         <TextView
@@ -115,9 +140,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/pelanggan_cabang"
+            android:padding="10dp"
+            android:text="@string/Cabang"
             android:textSize="12sp"
             android:textAlignment="textEnd"/>
     </LinearLayout>
@@ -127,13 +151,14 @@
             android:id="@+id/ly_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <Button
                 android:id="@+id/btn_lihat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:text="@string/pelanggan_lihat"
                 android:textColor="@android:color/white"
                 android:layout_marginHorizontal="10dp"/>
@@ -142,11 +167,10 @@
                 android:id="@+id/btn_hubungi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.5"
                 android:text="@string/pelanggan_hubungi"
                 android:textColor="@android:color/white"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="3dp"/>
+                android:layout_marginHorizontal="10dp"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

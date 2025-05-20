@@ -9,19 +9,19 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="LaundryIn"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.Laundry"
         tools:targetApi="31">
         <activity
+            android:name=".layanan.cari_layanan"
+            android:exported="false" />
+        <activity
+            android:name=".pelanggan.pilih_pelanggan"
+            android:exported="false" />
+        <activity
             android:name=".login"
-            android:exported="false" />
-        <activity
-            android:name=".transaksi.data_transaksi"
-            android:exported="false" />
-        <activity
-            android:name=".laundry"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".transaksi.transaksi"
+            android:exported="false" />
+        <activity
+            android:name=".laundry"
+            android:exported="true"/>
         <activity
             android:name=".pelanggan.tambah_pelanggan"
             android:exported="false" />

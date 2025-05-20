@@ -2,10 +2,7 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="pelanggan_id">ID Pelanggan</string>
-    <string name="pelanggan_alamat">Alamat :</string>
     <string name="pelanggan_terdaftar">Terdaftar :</string>
-    <string name="pelanggan_nama">Nama Pelanggan :</string>
-    <string name="pelanggan_cabang">Cabang :</string>
     <string name="pelanggan_lihat">Lihat</string>
     <string name="pelanggan_hubungi">Hubungi</string>
     <string name="pegawai_id">ID Pegawai</string>
@@ -25,7 +22,7 @@
     <string name="pelanggan_tambah_gagal">Data gagal ditambahkan</string>
     <string name="pelanggan_nohp">Nomor HP :</string>
     <string name="pegawai_nohp">Nomor HP :</string>
-    <string name="tambah_pelanggan_judul">Tambah Pelanggan</string>
+    <string name="TambahPelangganBaru">Tambah Pelanggan Baru</string>
     <string name="detail_pelanggan">Detail Pelanggan</string>
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="add">Tambah</string>
@@ -33,4 +30,37 @@
     <string name="tambah_layanan_judul">Tambah Layanan</string>
     <string name="pelanggan_edit">Sunting</string>
     <string name="pelanggan_hapus">Hapus</string>
+    <string name="SelamatDatangLogin">Selamat Datang!</string>
+    <string name="LoginUntukLanjut">Login untuk melanjutkan</string>
+    <string name="NamaPengguna">Nama Pengguna</string>
+    <string name="KataSandi">Kata Sandi</string>
+    <string name="ValidasiUsernameLogin">Nama tidak boleh kosong</string>
+    <string name="ValidasiPasswordLogin">Password tidak boleh kosong</string>
+    <string name="SelamatPagi">"Selamat Pagi, "</string>
+    <string name="SelamatSiang">"Selamat Siang, "</string>
+    <string name="SelamatSore">"Selamat Sore, "</string>
+    <string name="SelamatMalam">"Selamat Malam, "</string>
+    <string name="EstimasiHariIni">Estimasi hari ini</string>
+    <string name="Transaksi">Taransaksi</string>
+    <string name="Pelanggan">Pelanggan</string>
+    <string name="Laporan">Laporan</string>
+    <string name="Akun">Akun</string>
+    <string name="Layanan">Layanan</string>
+    <string name="Tambahan">Tambahan</string>
+    <string name="Pegawai">Pegawai</string>
+    <string name="Cabang">Cabang</string>
+    <string name="Cetak">Cetak</string>
+    <string name="KeluarApp">Tekan sekali lagi untuk keluar</string>
+    <string name="ValidasiNamaPelanggan">Nama Pelanggan tidak boleh kosong</string>
+    <string name="ValidasiAlamatPelanggan">Alamat Pelanggan tidak boleh kosong</string>
+    <string name="ValidasiNoHPPelanggan">Nomor HP Pelanggan tidak boleh kosong</string>
+    <string name="ValidasiCabangPelanggan">Cabang Pelanggan tidak boleh kosong</string>
+    <string name="Nama">Nama</string>
+    <string name="Alamat">Alamat</string>
+    <string name="HintNama">Masukan nama</string>
+    <string name="HintAlamat">Masukan alamat</string>
+    <string name="NoHP">Nomor HP</string>
+    <string name="HintNoHP">Masuakan nomor HP</string>
+    <string name="HintCabang">Masukan nama cabang</string>
+    <string name="DataPelanggan">Data Pelanggan</string>
 </resources>

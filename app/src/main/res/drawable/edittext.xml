@@ -14,7 +14,7 @@
             <corners android:radius="8dp" /> <!-- Sudut melengkung -->
             <stroke
                 android:width="2dp"
-                android:color="#03A9F4" /> <!-- Warna border -->
+                android:color="@color/colorPrimary" /> <!-- Warna border -->
         </shape>
     </item>
 </layer-list>

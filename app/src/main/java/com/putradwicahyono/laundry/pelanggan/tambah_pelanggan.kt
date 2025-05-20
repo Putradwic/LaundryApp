@@ -1,8 +1,10 @@
 package com.putradwicahyono.laundry.pelanggan
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -24,13 +26,16 @@ class tambah_pelanggan : AppCompatActivity() {
     lateinit var etNoHP: EditText
     lateinit var etCabang: EditText
     lateinit var btSimpan: Button
+    lateinit var backarrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_pelanggan)
         enableEdgeToEdge()
+
         init()
         simpan()
+        back()
 
         // Mengatur Inset untuk StatusBar & NavigationBar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pelanggan)) { v, insets ->
@@ -48,6 +53,7 @@ class tambah_pelanggan : AppCompatActivity() {
         etNoHP = findViewById(R.id.etnohp_pelanggan)
         etCabang = findViewById(R.id.etnama_cabang)
         btSimpan = findViewById(R.id.bttambah)
+        backarrow = findViewById(R.id.backarrow)
     }
 
     // Fungsi Simpan Data ke Firebase
@@ -58,31 +64,50 @@ class tambah_pelanggan : AppCompatActivity() {
             val noHP = etNoHP.text.toString()
             val cabang = etCabang.text.toString()
 
-            if (nama.isEmpty() || alamat.isEmpty() || noHP.isEmpty() || cabang.isEmpty()) {
-                Toast.makeText(this, "Semua data harus diisi!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (nama.isEmpty()) {
+                etNama.error = getString(R.string.ValidasiNamaPelanggan)
+                etNama.requestFocus()
+            } else if (alamat.isEmpty()) {
+                etAlamat.error = getString(R.string.ValidasiAlamatPelanggan)
+                etAlamat.requestFocus()
+            }else if (noHP.isEmpty()) {
+                etNoHP.error = getString(R.string.ValidasiNoHPPelanggan)
+                etNoHP.requestFocus()
+            }else if (cabang.isEmpty()) {
+                etCabang.error = getString(R.string.ValidasiCabangPelanggan)
+                etCabang.requestFocus()
+            }else {
+                val pelangganBaru = myRef.push()
+                val pelangganId = pelangganBaru.key ?: "Unknown"
+                val data = ModelPelanggan(pelangganId, nama, alamat, noHP, cabang,)
+
+                pelangganBaru.setValue(data)
+                    .addOnSuccessListener {
+                        Toast.makeText(
+                            this,
+                            this.getString(R.string.berhasil_tambah_pelanggan),
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        val intent = Intent(this, data_pelanggan::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(
+                            this,
+                            this.getString(R.string.pelanggan_tambah_gagal),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
             }
-
-            val pelangganBaru = myRef.push()
-            val pelangganId = pelangganBaru.key ?: "Unknown"
-            val data = ModelPelanggan(pelangganId, nama, alamat, noHP, cabang,)
-
-            pelangganBaru.setValue(data)
-                .addOnSuccessListener {
-                    Toast.makeText(
-                        this,
-                        this.getString(R.string.berhasil_tambah_pelanggan),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    finish()
-                }
-                .addOnFailureListener {
-                    Toast.makeText(
-                        this,
-                        this.getString(R.string.pelanggan_tambah_gagal),
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+        }
+    }
+    fun back(){
+        backarrow.setOnClickListener {
+            val intent = Intent(this, data_pelanggan::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

@@ -1,10 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">Laundry</string>
+    <string name="app_name">Laundry</string>
     <string name="pelanggan_id" translatable="false">id_pelanggan</string>
-    <string name="pelanggan_alamat" translatable="false">alamat_pelanggan</string>
     <string name="pelanggan_terdaftar" translatable="false">terdaftar_pelanggan</string>
-    <string name="pelanggan_nama" translatable="false">nama_pelanggan</string>
-    <string name="pelanggan_cabang" translatable="false">cabang_pelanggan</string>
     <string name="pelanggan_lihat" translatable="false">lihat_pelanggan</string>
     <string name="pelanggan_hubungi" translatable="false">hubungi_pelanggan</string>
     <string name="pegawai_id" translatable="false">id_pegawai</string>
@@ -22,9 +19,9 @@
     <string name="validasi_tambah_pelanggan" translatable="false">tambah_pelanggan_validsi</string>
     <string name="berhasil_tambah_pelanggan" translatable="false">pelanggan_tambah_berhasil</string>
     <string name="pelanggan_tambah_gagal" translatable="false">gagal_tambah_pelanggan</string>
-    <string name="pelanggan_nohp" translatable="false">nohp_pelanggan</string>
+    <string name="pelanggan_nohp">nohp_pelanggan</string>
     <string name="pegawai_nohp" translatable="false">nohp_pegawai</string>
-    <string name="tambah_pelanggan_judul" translatable="false">judul_tambah_pelanggan</string>
+    <string name="TambahPelangganBaru" translatable="false">judul_tambah_pelanggan</string>
     <string name="detail_pelanggan" translatable="false">pelanggan_detail</string>
     <string name="nama_lengkap" translatable="false">lengkap_nama</string>
     <string name="add" translatable="false">tambah</string>
@@ -33,4 +30,37 @@
     <string name="judul_layanan">layanan_judul</string>
     <string name="pelanggan_edit" translatable="false">edit_pelanggan</string>
     <string name="pelanggan_hapus" translatable="false">hapus_pelanggan</string>
+    <string name="SelamatDatangLogin" translatable="false">SelamatDatangLogin</string>
+    <string name="LoginUntukLanjut" translatable="false">LoginUntukLanjut</string>
+    <string name="NamaPengguna" translatable="false">NamaPengguna</string>
+    <string name="KataSandi" translatable="false">KataSandi</string>
+    <string name="ValidasiUsernameLogin" translatable="false">ValidasiUsernameLogin</string>
+    <string name="ValidasiPasswordLogin" translatable="false">ValidasiPasswordLogin</string>
+    <string name="SelamatPagi" translatable="false">SelamatPagi</string>
+    <string name="SelamatSiang" translatable="false">SelamatSiang</string>
+    <string name="SelamatSore" translatable="false">SelamatSore</string>
+    <string name="SelamatMalam" translatable="false">SelamatMalam</string>
+    <string name="EstimasiHariIni" translatable="false">EsitimasiHariIni</string>
+    <string name="Transaksi" translatable="false">Transaksi</string>
+    <string name="Pelanggan" translatable="false">Pelanggan</string>
+    <string name="Laporan" translatable="false">Laporan</string>
+    <string name="Akun" translatable="false">Akun</string>
+    <string name="Layanan" translatable="false">Layanan</string>
+    <string name="Tambahan" translatable="false">Tambahan</string>
+    <string name="Pegawai" translatable="false">Pegawai</string>
+    <string name="Cabang" translatable="false">Cabang</string>
+    <string name="Cetak" translatable="false">Cetak</string>
+    <string name="KeluarApp" translatable="false">KeluarApp</string>
+    <string name="ValidasiNamaPelanggan" translatable="false">ValidasiNamaPelanggan</string>
+    <string name="ValidasiAlamatPelanggan" translatable="false">ValidasiAlamaPelanggan</string>
+    <string name="ValidasiNoHPPelanggan" translatable="false">ValidasiNoHPPelanggan</string>
+    <string name="ValidasiCabangPelanggan" translatable="false">ValidasiCabangPelanggan</string>
+    <string name="Nama" translatable="false">Nama</string>
+    <string name="Alamat" translatable="false">Alamat</string>
+    <string name="HintNama" translatable="false">HintNama</string>
+    <string name="HintAlamat" translatable="false">HintAlamat</string>
+    <string name="NoHP" translatable="false">NoHP</string>
+    <string name="HintNoHP" translatable="false">HintNoHP</string>
+    <string name="HintCabang" translatable="false">HintCabang</string>
+    <string name="DataPelanggan" translatable="false">DataPelanggan</string>
 </resources>

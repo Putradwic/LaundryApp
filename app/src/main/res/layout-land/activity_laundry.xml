@@ -369,7 +369,6 @@
                             />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
             </LinearLayout>
 
             <LinearLayout
@@ -489,15 +488,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
-
-
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

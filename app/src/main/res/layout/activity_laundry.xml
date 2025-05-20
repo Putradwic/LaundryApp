@@ -13,7 +13,7 @@
         android:id="@+id/tv_sambutan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Selamat Pagi, Putra"
+        android:text="@string/SelamatPagi"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -72,7 +72,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Estimasi Hari Ini"
+                    android:text="@string/EstimasiHariIni"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     />
@@ -94,7 +94,8 @@
                 android:id="@+id/v_garis"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#E0E0E0"/>
+                android:background="#E0E0E0"
+                />
 
             <LinearLayout
                 android:id="@+id/lymenu_estimasi"
@@ -129,7 +130,7 @@
                             style="@style/colortext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Transaksi"
+                            android:text="@string/Transaksi"
                             android:textSize="16sp"
                             android:textAlignment="center"
                             />
@@ -160,7 +161,7 @@
                             style="@style/colortext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Pelanggan"
+                            android:text="@string/Pelanggan"
                             android:textSize="16sp"
                             android:textAlignment="center"
                             />
@@ -191,7 +192,7 @@
                             style="@style/colortext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Laporan"
+                            android:text="@string/Laporan"
                             android:textSize="16sp"
                             android:textAlignment="center"
                             />
@@ -279,7 +280,7 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Akun"
+                        android:text="@string/Akun"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
@@ -315,7 +316,7 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Layanan"
+                        android:text="@string/Layanan"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
@@ -353,16 +354,14 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tambahan"
+                        android:text="@string/Tambahan"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
                         />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
-
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -398,7 +397,7 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Pegawai"
+                        android:text="@string/Pegawai"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
@@ -434,7 +433,7 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Cabang"
+                        android:text="@string/Cabang"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
@@ -472,7 +471,7 @@
                         style="@style/colortext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Printer"
+                        android:text="@string/Cetak"
                         android:textSize="16dp"
                         android:textAlignment="center"
                         android:layout_marginTop="5dp"
@@ -480,6 +479,5 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

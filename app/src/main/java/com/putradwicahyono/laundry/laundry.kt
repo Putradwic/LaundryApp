@@ -14,14 +14,18 @@ import com.putradwicahyono.laundry.pelanggan.data_pelanggan
 import java.text.SimpleDateFormat
 import java.util.*
 import android.util.Log
+import android.widget.Toast
 import com.google.firebase.database.*
 import com.putradwicahyono.laundry.layanan.data_layanan
+import com.putradwicahyono.laundry.transaksi.transaksi
 
+@Suppress("DEPRECATION")
 class laundry : AppCompatActivity() {
 
     lateinit var card_pelanggan: CardView
     lateinit var card_pegawai: CardView
     lateinit var cardlayanan: CardView
+    lateinit var card_transaksi: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,15 +42,16 @@ class laundry : AppCompatActivity() {
         val jam_sekarang = waktu_sekarang.get(Calendar.HOUR_OF_DAY)
 
         val sambutan = when {
-            jam_sekarang in 0..10 -> "Selamat Pagi, Putra"
-            jam_sekarang in 11..14 -> "Selamat Siang, Putra"
-            jam_sekarang in 15..18 -> "Selamat Sore, Putra"
-            else -> "Selamat Malam, Putra"
+            jam_sekarang in 0..10 -> getString(R.string.SelamatPagi)
+            jam_sekarang in 11..14 -> getString(R.string.SelamatSiang)
+            jam_sekarang in 15..18 -> getString(R.string.SelamatSore)
+            else -> getString(R.string.SelamatMalam)
         }
 
         tv_sambutan.text = sambutan
 
-        val tanggal_format = SimpleDateFormat("EEEE, dd MMMM yyyy", Locale("id"))
+        val locale = Locale.getDefault()
+        val tanggal_format = SimpleDateFormat("EEEE, dd MMMM yyyy", locale)
         val tanggal_sekarang = tanggal_format.format(Date())
         tv_tanggal.text = tanggal_sekarang
 
@@ -74,7 +79,7 @@ class laundry : AppCompatActivity() {
         card_pelanggan = findViewById(R.id.card_pelanggan)
         card_pegawai = findViewById(R.id.cardpegawai)
         cardlayanan = findViewById(R.id.cardlayanan)
-
+        card_transaksi = findViewById(R.id.card_transaksi)
     }
     private fun pindah(){
         card_pelanggan.setOnClickListener{
@@ -89,6 +94,24 @@ class laundry : AppCompatActivity() {
             val intent = Intent(this, data_layanan::class.java)
             startActivity(intent)
         }
+        card_transaksi.setOnClickListener{
+            val intent = Intent(this, transaksi::class.java)
+            startActivity(intent)
+        }
 
     }
+    private var jedaWaktuTekan: Long = 0
+    private lateinit var toast: Toast
+
+    override fun onBackPressed() {
+        if (jedaWaktuTekan + 2000 > System.currentTimeMillis()) {
+            toast.cancel()
+            super.onBackPressed()
+        } else {
+            toast = Toast.makeText(this, getString(R.string.KeluarApp), Toast.LENGTH_SHORT)
+            toast.show()
+        }
+        jedaWaktuTekan = System.currentTimeMillis()
+    }
+
 }

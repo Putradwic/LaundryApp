@@ -2,10 +2,7 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="pelanggan_id">Customer ID</string>
-    <string name="pelanggan_alamat">Addres :</string>
     <string name="pelanggan_terdaftar">Registered :</string>
-    <string name="pelanggan_nama">Customer Name :</string>
-    <string name="pelanggan_cabang">Branch :</string>
     <string name="pelanggan_lihat">See</string>
     <string name="pelanggan_hubungi">Contact</string>
     <string name="pegawai_id">Employee ID</string>
@@ -25,7 +22,7 @@
     <string name="pelanggan_tambah_gagal">Data failed to be added</string>
     <string name="pelanggan_nohp">Phone Number :</string>
     <string name="pegawai_nohp">Phone Number :</string>
-    <string name="tambah_pelanggan_judul">Add Customer</string>
+    <string name="TambahPelangganBaru">Add New Customer</string>
     <string name="detail_pelanggan">Customer Details</string>
     <string name="nama_lengkap">Full Name</string>
     <string name="add">Add</string>
@@ -33,4 +30,37 @@
     <string name="tambah_layanan_judul">tambah</string>
     <string name="pelanggan_edit">Edit</string>
     <string name="pelanggan_hapus">Delete</string>
+    <string name="SelamatDatangLogin">Welcome!</string>
+    <string name="LoginUntukLanjut">Login to continue</string>
+    <string name="NamaPengguna">Username</string>
+    <string name="KataSandi">Password</string>
+    <string name="ValidasiUsernameLogin">Username cannot be empty</string>
+    <string name="ValidasiPasswordLogin">Password cannot be empty</string>
+    <string name="SelamatPagi">"Good Morning, "</string>
+    <string name="SelamatSiang">"Good Afternoon, "</string>
+    <string name="SelamatSore">"Good Evening, "</string>
+    <string name="SelamatMalam">"Good Night, "</string>
+    <string name="EstimasiHariIni">Today\'s estimate</string>
+    <string name="Transaksi">Transaction</string>
+    <string name="Pelanggan">Customers</string>
+    <string name="Laporan">Reports</string>
+    <string name="Akun">Account</string>
+    <string name="Layanan">Services</string>
+    <string name="Tambahan">Additional</string>
+    <string name="Pegawai">Employees</string>
+    <string name="Cabang">Branches</string>
+    <string name="Cetak">Print</string>
+    <string name="KeluarApp">Press again to exit</string>
+    <string name="ValidasiNamaPelanggan">Customer Name cannot be empty</string>
+    <string name="ValidasiAlamatPelanggan">Customer address cannot be empty</string>
+    <string name="ValidasiNoHPPelanggan">Customer\'s phone number cannot be empty</string>
+    <string name="ValidasiCabangPelanggan">Customer Branch cannot be empty</string>
+    <string name="Nama">Name</string>
+    <string name="Alamat">Address</string>
+    <string name="HintNama">Enter a name</string>
+    <string name="HintAlamat">Enter the address</string>
+    <string name="NoHP">Phone Number</string>
+    <string name="HintNoHP">Enter a phone number</string>
+    <string name="HintCabang">Enter branch name</string>
+    <string name="DataPelanggan">Customer Data</string>
 </resources>

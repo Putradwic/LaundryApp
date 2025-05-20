@@ -18,7 +18,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-// Penamaan kelas sebaiknya menggunakan PascalCase
 class data_pelanggan : AppCompatActivity() {
 
     // Inisialisasi Firebase
@@ -32,8 +31,6 @@ class data_pelanggan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_pelanggan)
-
-        // Enable edge-to-edge untuk tampilan modern
         enableEdgeToEdge()
 
         initViews()
@@ -41,7 +38,6 @@ class data_pelanggan : AppCompatActivity() {
         setupListeners()
         getData()
 
-        // Atur padding agar tidak terhalang oleh system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.data_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -64,14 +60,13 @@ class data_pelanggan : AppCompatActivity() {
 
     private fun setupListeners() {
         fab_tambah_pelanggan.setOnClickListener {
-            // Pastikan kelas activity untuk tambah pelanggan sudah terdaftar di AndroidManifest.xml
             val intent = Intent(this, tambah_pelanggan::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
     private fun getData() {
-        // Ambil data berdasarkan idPelanggan dan batasi 100 data terakhir
         val query = myRef.orderByChild("idPelanggan").limitToLast(100)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -81,7 +76,6 @@ class data_pelanggan : AppCompatActivity() {
                         val pelanggan = dataSnapshot.getValue(ModelPelanggan::class.java)
                         pelanggan?.let { listPelanggan.add(it) }
                     }
-                    // Perbarui adapter RecyclerView
                     val adapter = data_pelanggan_adapter(listPelanggan)
                     rvdatapelanggan.adapter = adapter
                     adapter.notifyDataSetChanged()
