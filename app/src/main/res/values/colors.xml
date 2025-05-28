@@ -9,4 +9,9 @@
     <color name="belum">#fa0202</color>
     <color name="udah">#dbfc03</color>
     <color name="selesai">#03fc07</color>
+    <color name="strip">#E0E0E0</color>
+    <color name="merah">#F44336</color>
+    <color name="biru">#2196F3</color>
+    <color name="hijau">#4CAF50</color>
+    <color name="kuning">#FFD700</color>
 </resources>

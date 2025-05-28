@@ -6,7 +6,8 @@
     <color name="colorOnPrimary">#F8F1F1</color>
     <color name="colorstriped">#FFD600</color>
     <color name="colorstriped2">#FFEA00</color>
-<!--    <color name="belum">#FFCDD2</color>-->
-<!--    <color name="udah">#E1F5FE</color>-->
-<!--    <color name="selesai">#E8F5E9</color>-->
+    <color name="belum">#FFCDD2</color>
+    <color name="udah">#E1F5FE</color>
+    <color name="selesai">#E8F5E9</color>
+    <color name="strip">#3A3A3A</color>
 </resources>

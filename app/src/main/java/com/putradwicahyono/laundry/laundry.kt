@@ -33,8 +33,6 @@ class laundry : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_laundry)
 
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-
         val tv_sambutan : TextView = findViewById(R.id.tv_sambutan)
         val tv_tanggal : TextView = findViewById(R.id.tv_tanggal)
 

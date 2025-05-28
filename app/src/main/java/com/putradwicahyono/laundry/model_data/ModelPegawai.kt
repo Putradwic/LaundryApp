@@ -6,5 +6,6 @@ class ModelPegawai (
     val  alamat_pegawai: String? = null,
     val  nohp_pegawai: String? = null,
     val  cabang: String? = null,
+    val  status: String? = null,
     val  terdaftar: String? = null,
 )

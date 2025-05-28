@@ -2,11 +2,7 @@ package com.putradwicahyono.laundry.pelanggan
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,7 +15,6 @@ class tambah_pelanggan : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("pelanggan")
 
-    // Inisialisasi View
     lateinit var tvJudul: TextView
     lateinit var etNama: EditText
     lateinit var etAlamat: EditText
@@ -28,16 +23,20 @@ class tambah_pelanggan : AppCompatActivity() {
     lateinit var btSimpan: Button
     lateinit var backarrow: ImageView
 
+    var editMode = false
+    var isEditable = false
+    var pelangganId: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tambah_pelanggan)
         enableEdgeToEdge()
 
         init()
-        simpan()
+        handleForm()
         back()
+        intentData()
 
-        // Mengatur Inset untuk StatusBar & NavigationBar
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.tambah_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -45,7 +44,6 @@ class tambah_pelanggan : AppCompatActivity() {
         }
     }
 
-    // Inisialisasi View dari XML
     fun init() {
         tvJudul = findViewById(R.id.tvjudul_tambah_pelanggan)
         etNama = findViewById(R.id.etnama_pelanggan)
@@ -56,58 +54,103 @@ class tambah_pelanggan : AppCompatActivity() {
         backarrow = findViewById(R.id.backarrow)
     }
 
-    // Fungsi Simpan Data ke Firebase
-    fun simpan() {
+    fun disableEdit(enabled: Boolean) {
+        etNama.isEnabled = enabled
+        etAlamat.isEnabled = enabled
+        etNoHP.isEnabled = enabled
+        etCabang.isEnabled = enabled
+        isEditable = enabled
+    }
+
+    fun handleForm() {
         btSimpan.setOnClickListener {
-            val nama = etNama.text.toString()
-            val alamat = etAlamat.text.toString()
-            val noHP = etNoHP.text.toString()
-            val cabang = etCabang.text.toString()
+            if (editMode && !isEditable) {
+                // Ubah jadi mode edit
+                disableEdit(true)
+                btSimpan.text = getString(R.string.Save)
+                Toast.makeText(this, "Form bisa diedit sekarang", Toast.LENGTH_SHORT).show()
+            } else {
+                // Lanjut ke proses simpan (tambah atau update)
+                val nama = etNama.text.toString()
+                val alamat = etAlamat.text.toString()
+                val noHP = etNoHP.text.toString()
+                val cabang = etCabang.text.toString()
 
-            if (nama.isEmpty()) {
-                etNama.error = getString(R.string.ValidasiNamaPelanggan)
-                etNama.requestFocus()
-            } else if (alamat.isEmpty()) {
-                etAlamat.error = getString(R.string.ValidasiAlamatPelanggan)
-                etAlamat.requestFocus()
-            }else if (noHP.isEmpty()) {
-                etNoHP.error = getString(R.string.ValidasiNoHPPelanggan)
-                etNoHP.requestFocus()
-            }else if (cabang.isEmpty()) {
-                etCabang.error = getString(R.string.ValidasiCabangPelanggan)
-                etCabang.requestFocus()
-            }else {
-                val pelangganBaru = myRef.push()
-                val pelangganId = pelangganBaru.key ?: "Unknown"
-                val data = ModelPelanggan(pelangganId, nama, alamat, noHP, cabang,)
+                if (nama.isEmpty()) {
+                    etNama.error = getString(R.string.ValidasiNamaPelanggan)
+                    etNama.requestFocus()
+                } else if (alamat.isEmpty()) {
+                    etAlamat.error = getString(R.string.ValidasiAlamatPelanggan)
+                    etAlamat.requestFocus()
+                } else if (noHP.isEmpty()) {
+                    etNoHP.error = getString(R.string.ValidasiNoHPPelanggan)
+                    etNoHP.requestFocus()
+                } else if (cabang.isEmpty()) {
+                    etCabang.error = getString(R.string.ValidasiCabangPelanggan)
+                    etCabang.requestFocus()
+                } else {
+                    if (editMode && pelangganId != null) {
+                        val updated = ModelPelanggan(
+                            pelangganId!!, nama, alamat, noHP, cabang, System.currentTimeMillis()
+                        )
 
-                pelangganBaru.setValue(data)
-                    .addOnSuccessListener {
-                        Toast.makeText(
-                            this,
-                            this.getString(R.string.berhasil_tambah_pelanggan),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        myRef.child(pelangganId!!).setValue(updated)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, this.getString(R.string.BerhasilUpdatePelanggan), Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this, this.getString(R.string.GagalUpdatePelanggan), Toast.LENGTH_SHORT).show()
+                            }
+                    } else {
+                        val pelangganBaru = myRef.push()
+                        val pelangganId = pelangganBaru.key ?: "Unknown"
+                        val data = ModelPelanggan(
+                            pelangganId, nama, alamat, noHP, cabang, System.currentTimeMillis()
+                        )
 
-                        val intent = Intent(this, data_pelanggan::class.java)
-                        startActivity(intent)
-                        finish()
+                        pelangganBaru.setValue(data)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, getString(R.string.BerhasilTambahPelanggan), Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, data_pelanggan::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                Toast.makeText(this, getString(R.string.GagalTambahPelanggan), Toast.LENGTH_SHORT).show()
+                            }
                     }
-                    .addOnFailureListener {
-                        Toast.makeText(
-                            this,
-                            this.getString(R.string.pelanggan_tambah_gagal),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                }
             }
         }
     }
-    fun back(){
+
+    fun back() {
         backarrow.setOnClickListener {
             val intent = Intent(this, data_pelanggan::class.java)
             startActivity(intent)
             finish()
+        }
+    }
+
+    fun intentData() {
+        val edit = intent.getBooleanExtra("edit", false)
+
+        if (edit) {
+            editMode = true
+            pelangganId = intent.getStringExtra("id") ?: ""
+            tvJudul.text = getString(R.string.EditPelanggan)
+            btSimpan.text = "Sunting"
+            disableEdit(false)
+
+            etNama.setText(intent.getStringExtra("nama") ?: "")
+            etAlamat.setText(intent.getStringExtra("alamat") ?: "")
+            etNoHP.setText(intent.getStringExtra("nohp") ?: "")
+            etCabang.setText(intent.getStringExtra("cabang") ?: "")
+        } else {
+            tvJudul.text = getString(R.string.TambahPelangganBaru)
+            btSimpan.text = getString(R.string.add)
+            disableEdit(true)
         }
     }
 }

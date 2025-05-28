@@ -24,6 +24,7 @@ class tambah_pegawai : AppCompatActivity() {
     lateinit var etAlamat: EditText
     lateinit var etNoHP: EditText
     lateinit var etCabang: EditText
+    lateinit var etstatus: EditText
     lateinit var btSimpan: Button
 
     var idPegawai: String = ""
@@ -51,6 +52,7 @@ class tambah_pegawai : AppCompatActivity() {
         etAlamat = findViewById(R.id.etalamat_pegawai)
         etNoHP = findViewById(R.id.etnohp_pegawai)
         etCabang = findViewById(R.id.etnama_cabang)
+        etstatus = findViewById(R.id.etstatus)
         btSimpan = findViewById(R.id.bttambah)
     }
 
@@ -61,10 +63,23 @@ class tambah_pegawai : AppCompatActivity() {
             val alamat = etAlamat.text.toString()
             val noHP = etNoHP.text.toString()
             val cabang = etCabang.text.toString()
+            val status = etCabang.text.toString()
 
-            if (nama.isEmpty() || alamat.isEmpty() || noHP.isEmpty() || cabang.isEmpty()) {
-                Toast.makeText(this, "Semua data harus diisi!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
+            if (nama.isEmpty()) {
+                etNama.error = getString(R.string.ValidasiNamaPegawai)
+                etNama.requestFocus()
+            } else if (alamat.isEmpty()) {
+                etAlamat.error = getString(R.string.ValidasiAlamatPegawai)
+                etAlamat.requestFocus()
+            } else if (noHP.isEmpty()) {
+                etNoHP.error = getString(R.string.ValidasiNoHPPegawai)
+                etNoHP.requestFocus()
+            }else if (status.isEmpty()) {
+                etstatus.error = getString(R.string.ValidasiStatusPegawai)
+                etstatus.requestFocus()
+            } else if (cabang.isEmpty()) {
+                etCabang.error = getString(R.string.ValidasiCabangPegawai)
+                etCabang.requestFocus()
             }
 
 
@@ -77,7 +92,7 @@ class tambah_pegawai : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(
                         this,
-                        this.getString(R.string.berhasil_tambah_pelanggan),
+                        this.getString(R.string.BerhasilTambahPelanggan),
                         Toast.LENGTH_SHORT
                     ).show()
                     finish()
@@ -85,7 +100,7 @@ class tambah_pegawai : AppCompatActivity() {
                 .addOnFailureListener {
                     Toast.makeText(
                         this,
-                        this.getString(R.string.pelanggan_tambah_gagal),
+                        this.getString(R.string.GagalTambahPelanggan),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

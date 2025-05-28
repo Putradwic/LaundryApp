@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="pelanggan_id">ID Pelanggan</string>
-    <string name="pelanggan_terdaftar">Terdaftar :</string>
+    <string name="Terdaftar">Terdaftar</string>
     <string name="pelanggan_lihat">Lihat</string>
     <string name="pelanggan_hubungi">Hubungi</string>
     <string name="pegawai_id">ID Pegawai</string>
@@ -18,8 +18,8 @@
     <string name="layanan_nama_cabang">Nama Cabang :</string>
     <string name="pelanggan_tambah_noHP">No HP</string>
     <string name="validasi_tambah_pelanggan">Formulir harus diisi dengan lengkap</string>
-    <string name="berhasil_tambah_pelanggan">Data berhasil ditambahkan</string>
-    <string name="pelanggan_tambah_gagal">Data gagal ditambahkan</string>
+    <string name="BerhasilTambahPelanggan">Data berhasil ditambahkan</string>
+    <string name="GagalTambahPelanggan">Customer gagal ditambahkan</string>
     <string name="pelanggan_nohp">Nomor HP :</string>
     <string name="pegawai_nohp">Nomor HP :</string>
     <string name="TambahPelangganBaru">Tambah Pelanggan Baru</string>
@@ -63,4 +63,28 @@
     <string name="HintNoHP">Masuakan nomor HP</string>
     <string name="HintCabang">Masukan nama cabang</string>
     <string name="DataPelanggan">Data Pelanggan</string>
+    <string name="DetailPelanggan">Detail Pelanggan</string>
+    <string name="Edit">Sunting</string>
+    <string name="Hapus">Hapus</string>
+    <string name="EditPelanggan">Sunting Pelanggan</string>
+    <string name="Save">Simpan</string>
+    <string name="EditBerhasil">Pelanggan berhasil diperbaharui</string>
+    <string name="EditGagal">Pelanggan gagal diperbaharui</string>
+    <string name="DataPegawai">Data Pegawai</string>
+    <string name="Status">Status</string>
+    <string name="TambahPegawaiBaru">Tambah Pegawai Baru</string>
+    <string name="HintStatus">Masukan Status</string>
+    <string name="ValidasiNamaPegawai">Nama pegawai tidak boleh kosong</string>
+    <string name="ValidasiAlamatPegawai">Alamat pegawai tidak boleh kosong</string>
+    <string name="ValidasiNoHPPegawai">Nomor HP egawai tidak boleh kososng</string>
+    <string name="ValidasiCabangPegawai">Cabang pegawai tidak boleh kosong</string>
+    <string name="ValidasiStatusPegawai">Status pegawai tidak boleh kosong</string>
+    <string name="BerhasilUpdatePelanggan">Berhasil mengupdate pelanggan</string>
+    <string name="GagalUpdatePelanggan">Gagal mengupdate pelanggan</string>
+    <string name="IDTidakAda">ID pelanggan tidak ditemukan</string>
+    <string name="Batal">Batal</string>
+    <string name="KonfirmasiHapus">Apakah Anda yakin ingin menghapus pelanggan dengan nama</string>
+    <string name="HapusBerhasil">Data pelanggan telah berhasil dihapus</string>
+    <string name="HapusGagal">Data pelanggan gagal dihapus</string>
+    <string name="HapusPelanggan">Hapus Pelanggan</string>
 </resources>

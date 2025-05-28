@@ -72,7 +72,7 @@ class tambah_layanan : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(
                         this,
-                        this.getString(R.string.berhasil_tambah_pelanggan),
+                        this.getString(R.string.BerhasilTambahPelanggan),
                         Toast.LENGTH_SHORT
                     ).show()
                     finish()
@@ -80,7 +80,7 @@ class tambah_layanan : AppCompatActivity() {
                 .addOnFailureListener {
                     Toast.makeText(
                         this,
-                        this.getString(R.string.pelanggan_tambah_gagal),
+                        this.getString(R.string.GagalTambahPelanggan),
                         Toast.LENGTH_SHORT
                     ).show()
                 }

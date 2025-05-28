@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Laundry</string>
-    <string name="pelanggan_id" translatable="false">id_pelanggan</string>
-    <string name="pelanggan_terdaftar" translatable="false">terdaftar_pelanggan</string>
+    <string name="pelanggan_id">id_pelanggan</string>
+    <string name="Terdaftar" translatable="false">terdaftar_pelanggan</string>
     <string name="pelanggan_lihat" translatable="false">lihat_pelanggan</string>
     <string name="pelanggan_hubungi" translatable="false">hubungi_pelanggan</string>
     <string name="pegawai_id" translatable="false">id_pegawai</string>
@@ -17,8 +17,8 @@
     <string name="layanan_nama_cabang" translatable="false">nama_cabang_layanan</string>
     <string name="pelanggan_tambah_noHP" translatable="false">tambah_pelanggan_noHP</string>
     <string name="validasi_tambah_pelanggan" translatable="false">tambah_pelanggan_validsi</string>
-    <string name="berhasil_tambah_pelanggan" translatable="false">pelanggan_tambah_berhasil</string>
-    <string name="pelanggan_tambah_gagal" translatable="false">gagal_tambah_pelanggan</string>
+    <string name="BerhasilTambahPelanggan" translatable="false">pelanggan_tambah_berhasil</string>
+    <string name="GagalTambahPelanggan" translatable="false">gagal_tambah_pelanggan</string>
     <string name="pelanggan_nohp">nohp_pelanggan</string>
     <string name="pegawai_nohp" translatable="false">nohp_pegawai</string>
     <string name="TambahPelangganBaru" translatable="false">judul_tambah_pelanggan</string>
@@ -63,4 +63,28 @@
     <string name="HintNoHP" translatable="false">HintNoHP</string>
     <string name="HintCabang" translatable="false">HintCabang</string>
     <string name="DataPelanggan" translatable="false">DataPelanggan</string>
+    <string name="DetailPelanggan" translatable="false">DetailPelanggan</string>
+    <string name="Edit" translatable="false">Edit</string>
+    <string name="Hapus" translatable="false">Hapus</string>
+    <string name="EditPelanggan" translatable="false">EditPelanggan</string>
+    <string name="Save" translatable="false">Save</string>
+    <string name="EditBerhasil" translatable="false">EditBerhasil</string>
+    <string name="EditGagal" translatable="false">EditGagal</string>
+    <string name="DataPegawai" translatable="false">DataPegawai</string>
+    <string name="Status" translatable="false">Status</string>
+    <string name="TambahPegawaiBaru" translatable="false">TambahPegawaiBaru</string>
+    <string name="HintStatus" translatable="false">HintStatus</string>
+    <string name="ValidasiNamaPegawai" translatable="false">ValidasiNamaPegawai</string>
+    <string name="ValidasiAlamatPegawai" translatable="false">ValidasiAlamatPegawai</string>
+    <string name="ValidasiNoHPPegawai" translatable="false">ValidasiNoHPPegawai</string>
+    <string name="ValidasiCabangPegawai" translatable="false">ValidasiCabangPegawai</string>
+    <string name="ValidasiStatusPegawai" translatable="false">ValidasiStatusPegawai</string>
+    <string name="BerhasilUpdatePelanggan" translatable="false">BerhasilUpdatePelanggan</string>
+    <string name="GagalUpdatePelanggan" translatable="false">GagalUpdatePelanggan</string>
+    <string name="IDTidakAda" translatable="false">IDTidakAda</string>
+    <string name="Batal" translatable="false">Batal</string>
+    <string name="KonfirmasiHapus" translatable="false">KonfirmasiHapus</string>
+    <string name="HapusBerhasil" translatable="false">HapusBerhasil</string>
+    <string name="HapusGagal" translatable="false">HapusGagal</string>
+    <string name="HapusPelanggan" translatable="false">HapusPelanggan</string>
 </resources>

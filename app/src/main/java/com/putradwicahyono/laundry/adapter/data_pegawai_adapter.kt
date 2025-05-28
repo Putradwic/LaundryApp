@@ -13,7 +13,6 @@ import com.google.firebase.database.DatabaseReference
 import com.putradwicahyono.laundry.R
 import com.putradwicahyono.laundry.model_data.ModelPegawai
 import com.putradwicahyono.laundry.pegawai.tambah_pegawai
-import java.lang.ref.Reference
 
 class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
     RecyclerView.Adapter<data_pegawai_adapter.ViewHolder>() {
@@ -34,7 +33,7 @@ class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
         holder.tvNoHP.text = item.nohp_pegawai
         holder.tvAlamat.text = item.alamat_pegawai
         holder.tvcabang.text = item.cabang
-
+        holder.tvstatus.text = item.status
 
         holder.cvCARD.setOnClickListener {
             val intent = Intent(appContext, tambah_pegawai::class.java)
@@ -44,6 +43,7 @@ class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
             intent.putExtra("noHPPegawai", item.nohp_pegawai)
             intent.putExtra("alamatPegawai",item.alamat_pegawai)
             intent.putExtra("cabang", item.cabang)
+            intent.putExtra("status", item.status)
             appContext.startActivity(intent)
         }
         holder.btHubungi.setOnClickListener {
@@ -63,6 +63,7 @@ class data_pegawai_adapter(private val listPegawai: ArrayList<ModelPegawai>) :
         val btHubungi: Button = itemView.findViewById(R.id.btn_hubungi)
         val btLihat: Button = itemView.findViewById(R.id.btn_lihat)
         val tvcabang: TextView = itemView.findViewById(R.id.tvcabang_pegawai)
+        val tvstatus: TextView = itemView.findViewById(R.id.tvstatus)
     }
 
     override fun getItemCount(): Int {

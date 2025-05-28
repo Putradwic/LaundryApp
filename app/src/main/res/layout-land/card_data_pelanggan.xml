@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_data_pegawai"
+    android:id="@+id/card_data_pelanggan"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -29,12 +29,12 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="8dp"
-                android:text="@string/DataPegawai"
+                android:text="@string/DataPelanggan"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvid_pegawai"
+                android:id="@+id/tvid_pelanggan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -61,7 +61,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnama_pegawai"
+                android:id="@+id/tvnama_pelanggan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -75,8 +75,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -102,6 +101,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/strip"
             android:orientation="horizontal">
 
             <TextView
@@ -110,17 +110,17 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Status"
+                android:text="@string/Alamat"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/tvalamat_pelanggan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Status"
+                android:text="@string/Alamat"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -128,7 +128,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/strip"
             android:orientation="horizontal">
 
             <TextView
@@ -141,7 +140,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvcabang_pegawai"
+                android:id="@+id/tvcabang_pelanggan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -156,8 +155,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/strip"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="0dp"
@@ -179,7 +177,6 @@
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
-
 
         <LinearLayout
             android:id="@+id/ly_button"
