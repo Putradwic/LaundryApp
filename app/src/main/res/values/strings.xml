@@ -1,90 +1,106 @@
 <resources>
     <string name="app_name">Laundry</string>
     <string name="pelanggan_id">id_pelanggan</string>
-    <string name="Terdaftar" translatable="false">terdaftar_pelanggan</string>
-    <string name="pelanggan_lihat" translatable="false">lihat_pelanggan</string>
-    <string name="pelanggan_hubungi" translatable="false">hubungi_pelanggan</string>
-    <string name="pegawai_id" translatable="false">id_pegawai</string>
-    <string name="pegawai_alamat" translatable="false">alamat_pegawai</string>
-    <string name="pegawai_nama" translatable="false">nama_pegawai</string>
-    <string name="pegawai_terdaftar" translatable="false">terdaftar_pegawai</string>
-    <string name="pegawai_cabang" translatable="false">cabang_pegawai</string>
-    <string name="pegawai_lihat" translatable="false">lihat_pegawai</string>
-    <string name="pegawai_hubungi" translatable="false">hubungi_pegawai</string>
-    <string name="layanan_id" translatable="false">id_layanan</string>
-    <string name="layanan_nama" translatable="false">nama_layanan :</string>
-    <string name="layanan_harga" translatable="false">harga_layanan :</string>
-    <string name="layanan_nama_cabang" translatable="false">nama_cabang_layanan</string>
-    <string name="pelanggan_tambah_noHP" translatable="false">tambah_pelanggan_noHP</string>
-    <string name="validasi_tambah_pelanggan" translatable="false">tambah_pelanggan_validsi</string>
-    <string name="BerhasilTambahPelanggan" translatable="false">pelanggan_tambah_berhasil</string>
-    <string name="GagalTambahPelanggan" translatable="false">gagal_tambah_pelanggan</string>
+    <string name="Terdaftar">terdaftar_pelanggan</string>
+    <string name="pelanggan_lihat">lihat_pelanggan</string>
+    <string name="pelanggan_hubungi">hubungi_pelanggan</string>
+    <string name="pegawai_id">id_pegawai</string>
+    <string name="pegawai_cabang">cabang_pegawai</string>
+    <string name="layanan_id">id_layanan</string>
+    <string name="layanan_nama">nama_layanan :</string>
+    <string name="Harga">Harga</string>
+    <string name="layanan_nama_cabang">nama_cabang_layanan</string>
+    <string name="pelanggan_tambah_noHP">tambah_pelanggan_noHP</string>
+    <string name="validasi_tambah_pelanggan">tambah_pelanggan_validsi</string>
+    <string name="BerhasilTambahPelanggan">pelanggan_tambah_berhasil</string>
+    <string name="GagalTambahPelanggan">gagal_tambah_pelanggan</string>
     <string name="pelanggan_nohp">nohp_pelanggan</string>
-    <string name="pegawai_nohp" translatable="false">nohp_pegawai</string>
-    <string name="TambahPelangganBaru" translatable="false">judul_tambah_pelanggan</string>
-    <string name="detail_pelanggan" translatable="false">pelanggan_detail</string>
-    <string name="nama_lengkap" translatable="false">lengkap_nama</string>
-    <string name="add" translatable="false">tambah</string>
-    <string name="tambah_pegawai_judul" translatable="false">judul_pegawai_tambah</string>
+    <string name="pegawai_nohp">nohp_pegawai</string>
+    <string name="TambahPelangganBaru">judul_tambah_pelanggan</string>
+    <string name="detail_pelanggan">pelanggan_detail</string>
+    <string name="nama_lengkap">lengkap_nama</string>
+    <string name="add">tambah</string>
     <string name="tambah_layanan_judul">judul_layanan_tambah</string>
-    <string name="judul_layanan">layanan_judul</string>
-    <string name="pelanggan_edit" translatable="false">edit_pelanggan</string>
-    <string name="pelanggan_hapus" translatable="false">hapus_pelanggan</string>
-    <string name="SelamatDatangLogin" translatable="false">SelamatDatangLogin</string>
-    <string name="LoginUntukLanjut" translatable="false">LoginUntukLanjut</string>
-    <string name="NamaPengguna" translatable="false">NamaPengguna</string>
-    <string name="KataSandi" translatable="false">KataSandi</string>
-    <string name="ValidasiUsernameLogin" translatable="false">ValidasiUsernameLogin</string>
-    <string name="ValidasiPasswordLogin" translatable="false">ValidasiPasswordLogin</string>
-    <string name="SelamatPagi" translatable="false">SelamatPagi</string>
-    <string name="SelamatSiang" translatable="false">SelamatSiang</string>
-    <string name="SelamatSore" translatable="false">SelamatSore</string>
-    <string name="SelamatMalam" translatable="false">SelamatMalam</string>
-    <string name="EstimasiHariIni" translatable="false">EsitimasiHariIni</string>
-    <string name="Transaksi" translatable="false">Transaksi</string>
-    <string name="Pelanggan" translatable="false">Pelanggan</string>
-    <string name="Laporan" translatable="false">Laporan</string>
-    <string name="Akun" translatable="false">Akun</string>
-    <string name="Layanan" translatable="false">Layanan</string>
-    <string name="Tambahan" translatable="false">Tambahan</string>
-    <string name="Pegawai" translatable="false">Pegawai</string>
-    <string name="Cabang" translatable="false">Cabang</string>
-    <string name="Cetak" translatable="false">Cetak</string>
-    <string name="KeluarApp" translatable="false">KeluarApp</string>
-    <string name="ValidasiNamaPelanggan" translatable="false">ValidasiNamaPelanggan</string>
-    <string name="ValidasiAlamatPelanggan" translatable="false">ValidasiAlamaPelanggan</string>
-    <string name="ValidasiNoHPPelanggan" translatable="false">ValidasiNoHPPelanggan</string>
-    <string name="ValidasiCabangPelanggan" translatable="false">ValidasiCabangPelanggan</string>
-    <string name="Nama" translatable="false">Nama</string>
-    <string name="Alamat" translatable="false">Alamat</string>
-    <string name="HintNama" translatable="false">HintNama</string>
-    <string name="HintAlamat" translatable="false">HintAlamat</string>
-    <string name="NoHP" translatable="false">NoHP</string>
-    <string name="HintNoHP" translatable="false">HintNoHP</string>
-    <string name="HintCabang" translatable="false">HintCabang</string>
-    <string name="DataPelanggan" translatable="false">DataPelanggan</string>
-    <string name="DetailPelanggan" translatable="false">DetailPelanggan</string>
-    <string name="Edit" translatable="false">Edit</string>
-    <string name="Hapus" translatable="false">Hapus</string>
-    <string name="EditPelanggan" translatable="false">EditPelanggan</string>
-    <string name="Save" translatable="false">Save</string>
-    <string name="EditBerhasil" translatable="false">EditBerhasil</string>
-    <string name="EditGagal" translatable="false">EditGagal</string>
-    <string name="DataPegawai" translatable="false">DataPegawai</string>
-    <string name="Status" translatable="false">Status</string>
-    <string name="TambahPegawaiBaru" translatable="false">TambahPegawaiBaru</string>
-    <string name="HintStatus" translatable="false">HintStatus</string>
-    <string name="ValidasiNamaPegawai" translatable="false">ValidasiNamaPegawai</string>
-    <string name="ValidasiAlamatPegawai" translatable="false">ValidasiAlamatPegawai</string>
-    <string name="ValidasiNoHPPegawai" translatable="false">ValidasiNoHPPegawai</string>
-    <string name="ValidasiCabangPegawai" translatable="false">ValidasiCabangPegawai</string>
-    <string name="ValidasiStatusPegawai" translatable="false">ValidasiStatusPegawai</string>
-    <string name="BerhasilUpdatePelanggan" translatable="false">BerhasilUpdatePelanggan</string>
-    <string name="GagalUpdatePelanggan" translatable="false">GagalUpdatePelanggan</string>
-    <string name="IDTidakAda" translatable="false">IDTidakAda</string>
-    <string name="Batal" translatable="false">Batal</string>
-    <string name="KonfirmasiHapus" translatable="false">KonfirmasiHapus</string>
-    <string name="HapusBerhasil" translatable="false">HapusBerhasil</string>
-    <string name="HapusGagal" translatable="false">HapusGagal</string>
-    <string name="HapusPelanggan" translatable="false">HapusPelanggan</string>
+    <string name="pelanggan_edit">edit_pelanggan</string>
+    <string name="pelanggan_hapus">hapus_pelanggan</string>
+    <string name="SelamatDatangLogin">SelamatDatangLogin</string>
+    <string name="LoginUntukLanjut">LoginUntukLanjut</string>
+    <string name="NamaPengguna">NamaPengguna</string>
+    <string name="KataSandi">KataSandi</string>
+    <string name="ValidasiUsernameLogin">ValidasiUsernameLogin</string>
+    <string name="ValidasiPasswordLogin">ValidasiPasswordLogin</string>
+    <string name="SelamatPagi">SelamatPagi</string>
+    <string name="SelamatSiang">SelamatSiang</string>
+    <string name="SelamatSore">SelamatSore</string>
+    <string name="SelamatMalam">SelamatMalam</string>
+    <string name="EstimasiHariIni">EsitimasiHariIni</string>
+    <string name="Transaksi">Transaksi</string>
+    <string name="Pelanggan">Pelanggan</string>
+    <string name="Laporan">Laporan</string>
+    <string name="Akun">Akun</string>
+    <string name="Layanan">Layanan</string>
+    <string name="Tambahan">Tambahan</string>
+    <string name="Pegawai">Pegawai</string>
+    <string name="Cabang">Cabang</string>
+    <string name="Cetak">Cetak</string>
+    <string name="KeluarApp">KeluarApp</string>
+    <string name="ValidasiNamaPelanggan">ValidasiNamaPelanggan</string>
+    <string name="ValidasiAlamatPelanggan">ValidasiAlamaPelanggan</string>
+    <string name="ValidasiNoHPPelanggan">ValidasiNoHPPelanggan</string>
+    <string name="ValidasiCabangPelanggan">ValidasiCabangPelanggan</string>
+    <string name="Nama">Nama</string>
+    <string name="Alamat">Alamat</string>
+    <string name="HintNama">HintNama</string>
+    <string name="HintAlamat">HintAlamat</string>
+    <string name="NoHP">NoHP</string>
+    <string name="HintNoHP">HintNoHP</string>
+    <string name="HintCabang">HintCabang</string>
+    <string name="DataPelanggan">DataPelanggan</string>
+    <string name="DetailPelanggan">DetailPelanggan</string>
+    <string name="Edit">Edit</string>
+    <string name="Hapus">Hapus</string>
+    <string name="EditPelanggan">EditPelanggan</string>
+    <string name="Save">Save</string>
+    <string name="EditBerhasil">EditBerhasil</string>
+    <string name="EditGagal">EditGagal</string>
+    <string name="DataPegawai">DataPegawai</string>
+    <string name="Status">Status</string>
+    <string name="TambahPegawaiBaru">TambahPegawaiBaru</string>
+    <string name="HintStatus">HintStatus</string>
+    <string name="ValidasiNamaPegawai">ValidasiNamaPegawai</string>
+    <string name="ValidasiAlamatPegawai">ValidasiAlamatPegawai</string>
+    <string name="ValidasiNoHPPegawai">ValidasiNoHPPegawai</string>
+    <string name="ValidasiCabangPegawai">ValidasiCabangPegawai</string>
+    <string name="ValidasiStatusPegawai">ValidasiStatusPegawai</string>
+    <string name="BerhasilUpdatePelanggan">BerhasilUpdatePelanggan</string>
+    <string name="GagalUpdatePelanggan">GagalUpdatePelanggan</string>
+    <string name="IDTidakAda">IDTidakAda</string>
+    <string name="Batal">Batal</string>
+    <string name="KonfirmasiHapus">KonfirmasiHapus</string>
+    <string name="HapusBerhasil">HapusBerhasil</string>
+    <string name="HapusGagal">HapusGagal</string>
+    <string name="HapusPelanggan">HapusPelanggan</string>
+    <string name="KonfirmasiHapus1">KonfirmasiHapus1</string>
+    <string name="HapusBerhasil1">HapusBerhasil1</string>
+    <string name="HapusPegawai">HapusPegawai</string>
+    <string name="HapusGagal1">HapusGagal1</string>
+    <string name="BerhasilTambahPegawai">BerhasilTambahPegawai</string>
+    <string name="GagalTambahPegawai">GagalTambahPegawai</string>
+    <string name="BerhasilUpdatePegawai">BerhasilUpdatePegawai</string>
+    <string name="GagalUpdatePegawai">GagalUpdatePegawai</string>
+    <string name="EditPegawai">EditPegawai</string>
+    <string name="Editable">Editable</string>
+    <string name="DataLayanan">DataLayanan</string>
+    <string name="HintHarga">HintHarga</string>
+    <string name="TambahLayananBaru">TambahLayananBaru</string>
+    <string name="DetailPegawai">DetailPegawai</string>
+    <string name="DetailLayanan">DetailLayanan</string>
+    <string name="ValidasiNamaLayanan">ValidasiNamaLayanan</string>
+    <string name="ValidasiHargaLayanan">ValidasiHargaLayanan</string>
+    <string name="ValidasiCabangLayanan">ValidasiCabangLayanan</string>
+    <string name="BerhasilUpdateLayanan">BerhasilUpdateLayanan</string>
+    <string name="GagalUpdateLayanan">GagalUpdateLayanan</string>
+    <string name="BerhasilTambahLayanan">BerhasilTambahLayanan</string>
+    <string name="GagalTambahLayanan">GagalTambahLayanan</string>
+    <string name="EditLayanan">EditLayanan</string>
 </resources>

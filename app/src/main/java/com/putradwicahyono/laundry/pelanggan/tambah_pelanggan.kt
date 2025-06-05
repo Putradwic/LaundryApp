@@ -68,7 +68,7 @@ class tambah_pelanggan : AppCompatActivity() {
                 // Ubah jadi mode edit
                 disableEdit(true)
                 btSimpan.text = getString(R.string.Save)
-                Toast.makeText(this, "Form bisa diedit sekarang", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.Editable), Toast.LENGTH_SHORT).show()
             } else {
                 // Lanjut ke proses simpan (tambah atau update)
                 val nama = etNama.text.toString()
@@ -97,6 +97,8 @@ class tambah_pelanggan : AppCompatActivity() {
                         myRef.child(pelangganId!!).setValue(updated)
                             .addOnSuccessListener {
                                 Toast.makeText(this, this.getString(R.string.BerhasilUpdatePelanggan), Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, data_pelanggan::class.java)
+                                startActivity(intent)
                                 finish()
                             }
                             .addOnFailureListener {
@@ -140,7 +142,7 @@ class tambah_pelanggan : AppCompatActivity() {
             editMode = true
             pelangganId = intent.getStringExtra("id") ?: ""
             tvJudul.text = getString(R.string.EditPelanggan)
-            btSimpan.text = "Sunting"
+            btSimpan.text = getString(R.string.Edit)
             disableEdit(false)
 
             etNama.setText(intent.getStringExtra("nama") ?: "")

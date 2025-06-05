@@ -1,7 +1,6 @@
 package com.putradwicahyono.laundry.adapter
 
-import android.app.Activity
-import android.content.Intent
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.putradwicahyono.laundry.R
 import com.putradwicahyono.laundry.model_data.ModelPelanggan
-import com.putradwicahyono.laundry.transaksi.transaksi
 
 class pilih_pelanggan_adapter(
     private val listPelanggan: MutableList<ModelPelanggan>,private val onItemClick: (ModelPelanggan) -> Unit

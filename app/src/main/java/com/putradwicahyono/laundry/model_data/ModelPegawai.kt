@@ -7,5 +7,5 @@ class ModelPegawai (
     val  nohp_pegawai: String? = null,
     val  cabang: String? = null,
     val  status: String? = null,
-    val  terdaftar: String? = null,
+    val timestamp: Long = 0L
 )

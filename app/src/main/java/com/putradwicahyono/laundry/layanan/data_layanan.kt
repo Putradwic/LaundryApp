@@ -4,8 +4,12 @@ package com.putradwicahyono.laundry.layanan
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -75,27 +79,116 @@ class data_layanan : AppCompatActivity() {
         }
     }
 
+    // Ambil data dari firebase
     private fun getData() {
-        // Ambil data berdasarkan idPelanggan dan batasi 100 data terakhir
         val query = myRef.orderByChild("idLayanan").limitToLast(100)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listLayanan.clear()
-                if (snapshot.exists()){
+                if (snapshot.exists()) {
                     for (dataSnapshot in snapshot.children) {
                         val layanan = dataSnapshot.getValue(ModelLayanan::class.java)
                         layanan?.let { listLayanan.add(it) }
                     }
-                    // Perbarui adapter RecyclerView
-                    val adapter = data_layanan_adapter(listLayanan)
+                    val adapter = data_layanan_adapter(listLayanan) { layanan ->
+                        munculDialogLayanan(layanan)
+                    }
                     rvdatalayanan.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
             }
 
+            // Penanganan eror
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@data_layanan, error.message, Toast.LENGTH_SHORT).show()
             }
         })
+    }
+    // Memunculkan dialog mod berdasarkan layout
+    fun munculDialogLayanan(layanan: ModelLayanan) {
+        val view = LayoutInflater.from(this).inflate(R.layout.dialog_mod_layanan, null)
+        view.findViewById<TextView>(R.id.tvnama_layanan).text = layanan.nama_layanan
+        val hargaFormatted = "Rp %,d".format(layanan.harga_layanan ?: 0).replace(',', '.')
+        view.findViewById<TextView>(R.id.tvharga_layanan).text = hargaFormatted
+        view.findViewById<TextView>(R.id.tvnama_cabang_layanan).text = layanan.cabang
+        val btnSunting = view.findViewById<Button>(R.id.btnEdit)
+        val btnHapus = view.findViewById<Button>(R.id.btnHapus)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(view)
+            .show()
+
+        btnSunting.setOnClickListener {
+            val intent = Intent(this, tambah_layanan::class.java).apply {
+                putExtra("edit", true)
+                putExtra("idLayanan", layanan.id_layanan)
+                putExtra("nama", layanan.nama_layanan)
+                putExtra("harga", layanan.harga_layanan)
+                putExtra("cabang", layanan.cabang)
+            }
+            this.startActivity(intent)
+            dialog.dismiss()
+            finish()
+        }
+
+        btnHapus.setOnClickListener {
+            layanan.id_layanan?.let { id ->
+                konfrimasi(
+                    title = getString(R.string.HapusPegawai),
+                    message = "${getString(R.string.KonfirmasiHapus1)}, ${layanan.nama_layanan} ?",
+                    onConfirm = {
+                        deleteLayanan(id)
+                    }
+                )
+            } ?: Toast.makeText(this, getString(R.string.IDTidakAda), Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
+    // Fungsi untuk memunculkan dialog dengan perubahan minor
+    fun konfrimasi(
+        title: String,
+        message: String,
+        onConfirm: () -> Unit
+    ) {
+        val view = LayoutInflater.from(this).inflate(R.layout.dialog_konfirmasi, null)
+
+        val tvTitle = view.findViewById<TextView>(R.id.modalJudul)
+        val tvMessage = view.findViewById<TextView>(R.id.pesan)
+        val btnCancel = view.findViewById<Button>(R.id.btnbatal)
+        val btnConfirm = view.findViewById<Button>(R.id.btnHapus)
+
+        tvTitle.text = title
+        tvMessage.text = message
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(view)
+            .setCancelable(false)
+            .create()
+
+        btnConfirm.setOnClickListener {
+            onConfirm()
+            dialog.dismiss()
+        }
+
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    // Fungsi hapus pegawai
+    private fun deleteLayanan(layananId: String) {
+        myRef.child(layananId).removeValue()
+            .addOnSuccessListener {
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, data_layanan::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, this.getString(R.string.HapusGagal1), Toast.LENGTH_SHORT).show()
+            }
     }
 }
