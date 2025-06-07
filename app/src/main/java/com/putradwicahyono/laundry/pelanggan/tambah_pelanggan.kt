@@ -1,5 +1,6 @@
 package com.putradwicahyono.laundry.pelanggan
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.putradwicahyono.laundry.R
 import com.putradwicahyono.laundry.model_data.ModelPelanggan
 import com.google.firebase.database.FirebaseDatabase
+import com.putradwicahyono.laundry.layanan.data_layanan
 
 class tambah_pelanggan : AppCompatActivity() {
     val database = FirebaseDatabase.getInstance()
@@ -42,6 +44,13 @@ class tambah_pelanggan : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        val intent = Intent(this, data_pelanggan::class.java)
+        startActivity(intent)
+        finish()
     }
 
     fun init() {

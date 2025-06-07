@@ -1,5 +1,6 @@
 package com.putradwicahyono.laundry.layanan
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
@@ -8,10 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.putradwicahyono.laundry.R
-import com.putradwicahyono.laundry.model_data.ModelPelanggan
+import com.putradwicahyono.laundry.model_data.ModelLayanan
 import com.google.firebase.database.FirebaseDatabase
 
 class tambah_layanan : AppCompatActivity() {
+
+    // database
     val database = FirebaseDatabase.getInstance()
     val myRef = database.getReference("layanan")
 
@@ -41,6 +44,14 @@ class tambah_layanan : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        val intent = Intent(this, data_layanan::class.java)
+        startActivity(intent)
+        finish()
     }
 
     fun init() {
@@ -69,21 +80,25 @@ class tambah_layanan : AppCompatActivity() {
             } else {
                 // Lanjut ke proses simpan (tambah atau update)
                 val nama = etNama.text.toString()
-                val harga = etHarga.text.toString()
+                val hargaStr = etHarga.text.toString()
+                val harga = hargaStr.toIntOrNull()
                 val cabang = etcabang.text.toString()
 
                 if (nama.isEmpty()) {
                     etNama.error = getString(R.string.ValidasiNamaLayanan)
                     etNama.requestFocus()
-                } else if (harga.isEmpty()) {
+                } else if (hargaStr.isEmpty()) {
                     etHarga.error = getString(R.string.ValidasiHargaLayanan)
+                    etHarga.requestFocus()
+                } else if (harga == null) {
+                    etHarga.error = "Harga harus berupa angka!"
                     etHarga.requestFocus()
                 } else if (cabang.isEmpty()) {
                     etcabang.error = getString(R.string.ValidasiCabangLayanan)
                     etcabang.requestFocus()
                 } else {
                     if (editMode && layananId != null) {
-                        val updated = ModelPelanggan(
+                        val updated = ModelLayanan(
                             layananId!!, nama, harga, cabang
                         )
 
@@ -100,7 +115,7 @@ class tambah_layanan : AppCompatActivity() {
                     } else {
                         val layananBaru = myRef.push()
                         val layananId = layananBaru.key ?: "Unknown"
-                        val data = ModelPelanggan(
+                        val data = ModelLayanan(
                             layananId, nama, harga, cabang
                         )
 
@@ -147,5 +162,6 @@ class tambah_layanan : AppCompatActivity() {
             disableEdit(true)
         }
     }
+
 
 }

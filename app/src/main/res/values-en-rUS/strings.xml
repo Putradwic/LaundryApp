@@ -36,8 +36,8 @@
     <string name="SelamatMalam">"Good Night, "</string>
     <string name="EstimasiHariIni">Today\'s estimate</string>
     <string name="Transaksi">Transaction</string>
-    <string name="Pelanggan">Customers</string>
-    <string name="Laporan">Reports</string>
+    <string name="Pelanggan">Customer</string>
+    <string name="Laporan">Report</string>
     <string name="Akun">Account</string>
     <string name="Layanan">Service</string>
     <string name="Tambahan">Additional</string>
@@ -82,9 +82,9 @@
     <string name="HapusGagal">Customer data failed to be deleted</string>
     <string name="HapusPelanggan">Delete Customer</string>
     <string name="KonfirmasiHapus1">Are you sure you want to delete a employee by name</string>
-    <string name="HapusBerhasil1">Employee data failed to be deleted</string>
+    <string name="Hapusgagal1">Employee data failed to be deleted</string>
     <string name="HapusPegawai">Delete Employee</string>
-    <string name="HapusGagal1">Employee data has been successfully deleted</string>
+    <string name="HapusBerhasil1">Employee data has been successfully deleted</string>
     <string name="BerhasilTambahPegawai">Employee added successfully</string>
     <string name="GagalTambahPegawai">Employee failed to be added</string>
     <string name="BerhasilUpdatePegawai">Employee updated successfully</string>
@@ -104,4 +104,10 @@
     <string name="BerhasilTambahLayanan">Service added successfully</string>
     <string name="GagalTambahLayanan">Service failed to be added</string>
     <string name="EditLayanan">Edit Service</string>
+    <string name="cabang_id">Branch ID</string>
+    <string name="DataCabang">Branch Data</string>
+    <string name="Slogan1">Ready to serve customers wholeheartedly</string>
+    <string name="Slogan2">Customer\'s clothing is our responsibility</string>
+    <string name="Slogan3">Fast, precise and clean as new</string>
+    <string name="Komitmen">Don\'t let customers down</string>
 </resources>

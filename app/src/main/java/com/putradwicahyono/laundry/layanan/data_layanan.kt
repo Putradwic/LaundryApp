@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,9 +24,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.putradwicahyono.laundry.laundry
 
 
-// Penamaan kelas sebaiknya menggunakan PascalCase
 class data_layanan : AppCompatActivity() {
 
     // Inisialisasi Firebase
@@ -35,6 +36,7 @@ class data_layanan : AppCompatActivity() {
     private lateinit var rvdatalayanan: RecyclerView
     private lateinit var fab_tambah_layanan: FloatingActionButton
     private var listLayanan = arrayListOf<ModelLayanan>()
+    private lateinit var backarrow: ImageView
 
 
 
@@ -49,6 +51,7 @@ class data_layanan : AppCompatActivity() {
         setupRecyclerView()
         setupListeners()
         getData()
+        back()
 
         // Atur padding agar tidak terhalang oleh system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -61,6 +64,7 @@ class data_layanan : AppCompatActivity() {
     private fun initViews() {
         rvdatalayanan = findViewById(R.id.rvdatalayanan)
         fab_tambah_layanan = findViewById(R.id.fab_tambah_layanan)
+        backarrow = findViewById(R.id.backarrow)
     }
 
     private fun setupRecyclerView() {
@@ -76,6 +80,7 @@ class data_layanan : AppCompatActivity() {
             // Pastikan kelas activity untuk tambah pelanggan sudah terdaftar di AndroidManifest.xml
             val intent = Intent(this, tambah_layanan::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
@@ -123,7 +128,7 @@ class data_layanan : AppCompatActivity() {
                 putExtra("edit", true)
                 putExtra("idLayanan", layanan.id_layanan)
                 putExtra("nama", layanan.nama_layanan)
-                putExtra("harga", layanan.harga_layanan)
+                putExtra("harga", layanan.harga_layanan.toString())
                 putExtra("cabang", layanan.cabang)
             }
             this.startActivity(intent)
@@ -181,14 +186,22 @@ class data_layanan : AppCompatActivity() {
     private fun deleteLayanan(layananId: String) {
         myRef.child(layananId).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.Hapusgagal1), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, data_layanan::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, this.getString(R.string.HapusGagal1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun back() {
+        backarrow.setOnClickListener {
+            val intent = Intent(this, laundry::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

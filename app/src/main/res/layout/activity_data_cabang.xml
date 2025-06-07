@@ -5,15 +5,15 @@
     android:id="@+id/data_cabang"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layanan.data_layanan">
+    tools:context=".cabang.data_cabang">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvdatalayanan"
+        android:id="@+id/rvdatacabang"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="MissingRecyclerViewAdapter"
         tools:itemCount="10"
-        tools:listitem="@layout/card_data_layanan" />
+        tools:listitem="@layout/card_data_cabang" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_tambah"

@@ -7,11 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".pelanggan.data_pelanggan">
 
+    <LinearLayout
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/tvdatapelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/Pelanggan"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvdatapelanggan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/card_data_pelanggan"
+        android:layout_below="@id/nav"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

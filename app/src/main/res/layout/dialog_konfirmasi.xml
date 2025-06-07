@@ -4,7 +4,7 @@
     android:id="@+id/card_dialog"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="6dp"
     app:cardElevation="6dp">
 
     <LinearLayout
@@ -51,7 +51,8 @@
             android:id="@+id/ly_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <Button
                 android:id="@+id/btnbatal"

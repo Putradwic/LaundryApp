@@ -1,5 +1,6 @@
 package com.putradwicahyono.laundry.pegawai
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.*
@@ -43,6 +44,13 @@ class tambah_pegawai : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    @SuppressLint("MissingSuperCall")
+    override fun onBackPressed() {
+        val intent = Intent(this, data_pegawai::class.java)
+        startActivity(intent)
+        finish()
     }
 
     fun init() {
@@ -92,7 +100,7 @@ class tambah_pegawai : AppCompatActivity() {
                 } else if (cabang.isEmpty()) {
                     etCabang.error = getString(R.string.ValidasiCabangPegawai)
                     etCabang.requestFocus()
-                }else if (cabang.isEmpty()) {
+                }else if (status.isEmpty()) {
                     etstatus.error = getString(R.string.ValidasiStatusPegawai)
                     etstatus.requestFocus()
                 } else {
@@ -111,6 +119,9 @@ class tambah_pegawai : AppCompatActivity() {
                             }
                             .addOnFailureListener {
                                 Toast.makeText(this, this.getString(R.string.GagalUpdatePegawai), Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, data_pegawai::class.java)
+                                startActivity(intent)
+                                finish()
                             }
                     } else {
                         val pegawaiBaru = myRef.push()

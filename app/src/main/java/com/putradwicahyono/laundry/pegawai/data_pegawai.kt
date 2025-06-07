@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +22,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.putradwicahyono.laundry.laundry
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -35,6 +37,7 @@ class data_pegawai : AppCompatActivity() {
     private lateinit var rvdatapegawai: RecyclerView
     private lateinit var fab_tambah_pegawai: FloatingActionButton
     private var listPegawai = arrayListOf<ModelPegawai>()
+    private lateinit var backarrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,7 @@ class data_pegawai : AppCompatActivity() {
         setupRecyclerView()
         setupListeners()
         getData()
+        back()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.data_pegawai)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -59,6 +63,7 @@ class data_pegawai : AppCompatActivity() {
     private fun initViews() {
         rvdatapegawai = findViewById(R.id.rvdatapegawai)
         fab_tambah_pegawai = findViewById(R.id.fab_tambah_pegawai)
+        backarrow = findViewById(R.id.backarrow)
     }
 
     // Mengatur tampilan RecyclerView list
@@ -188,14 +193,22 @@ class data_pegawai : AppCompatActivity() {
     private fun deletePegawai(pegawaiId: String) {
         myRef.child(pegawaiId).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.Hapusgagal1), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, data_pegawai::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, this.getString(R.string.HapusGagal1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun back() {
+        backarrow.setOnClickListener {
+            val intent = Intent(this, laundry::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

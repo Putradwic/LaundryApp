@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -21,6 +22,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.putradwicahyono.laundry.laundry
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -35,6 +37,7 @@ class data_pelanggan : AppCompatActivity() {
     private lateinit var rvdatapelanggan: RecyclerView
     private lateinit var fab_tambah_pelanggan: FloatingActionButton
     private var listPelanggan = arrayListOf<ModelPelanggan>()
+    private lateinit var backarrow: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +49,7 @@ class data_pelanggan : AppCompatActivity() {
         setupRecyclerView()
         setupListeners()
         getData()
+        back()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.data_pelanggan)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -59,6 +63,7 @@ class data_pelanggan : AppCompatActivity() {
     private fun initViews() {
         rvdatapelanggan = findViewById(R.id.rvdatapelanggan)
         fab_tambah_pelanggan = findViewById(R.id.fab_tambah_pelanggan)
+        backarrow = findViewById(R.id.backarrow)
     }
 
     // Mengatur tampilan RecyclerView list
@@ -195,5 +200,13 @@ class data_pelanggan : AppCompatActivity() {
             .addOnFailureListener {
                 Toast.makeText(this, this.getString(R.string.HapusGagal), Toast.LENGTH_SHORT).show()
             }
+    }
+
+    fun back() {
+        backarrow.setOnClickListener {
+            val intent = Intent(this, laundry::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 }

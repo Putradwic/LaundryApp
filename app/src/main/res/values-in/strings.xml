@@ -82,9 +82,9 @@
     <string name="HapusGagal">Data pelanggan gagal dihapus</string>
     <string name="HapusPelanggan">Hapus Pelanggan</string>
     <string name="KonfirmasiHapus1">Apakah Anda yakin ingin menghapus pegawai dengan nama</string>
-    <string name="HapusBerhasil1">Data pegawai gagal dihapus</string>
+    <string name="Hapusgagal1">Data pegawai gagal dihapus</string>
     <string name="HapusPegawai">Hapus Pegawai</string>
-    <string name="HapusGagal1">Pegawai telah berhasil dihapus</string>
+    <string name="HapusBerhasil1">Pegawai telah berhasil dihapus</string>
     <string name="BerhasilTambahPegawai">Pegawai berhasil ditambahkan</string>
     <string name="GagalTambahPegawai">Pegawai gagal ditambahkan</string>
     <string name="BerhasilUpdatePegawai">Berhasil memperbarui pegawai</string>
@@ -104,4 +104,10 @@
     <string name="BerhasilTambahLayanan">Layanan Berhasil ditambahkan</string>
     <string name="GagalTambahLayanan">Layanan gagal ditambahkan</string>
     <string name="EditLayanan">Edit Layanan</string>
+    <string name="cabang_id">ID Cabang</string>
+    <string name="DataCabang">Data Cabang</string>
+    <string name="Slogan1">Siap melayani pelanggan dengan setulus hati</string>
+    <string name="Slogan2">Pakaian pelanggan adalah tanggung jawab kami</string>
+    <string name="Slogan3">Cepat, tepat dan bersih seperti baru</string>
+    <string name="Komitmen">Jangan kecewakan pelanggan</string>
 </resources>

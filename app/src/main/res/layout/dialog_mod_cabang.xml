@@ -2,13 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_data_pegawai"
+    android:id="@+id/dialog_mod_pegawai"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:padding="10dp"
-    app:cardCornerRadius="6dp"
-    app:cardElevation="20dp">
+    app:cardCornerRadius="6dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +26,8 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="8dp"
-                android:text="@string/DataPegawai"
+                android:text="@string/DetailLayanan"
+                android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -39,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="3"
-                android:text="@string/pelanggan_id"
+                android:text="@string/pegawai_id"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
@@ -60,7 +58,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnama_pegawai"
+                android:id="@+id/tvnama_layanan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -83,74 +81,20 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Status"
+                android:text="@string/Harga"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/tvharga_layanan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Status"
+                android:text="@string/Harga"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/NoHP"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvnohp_pegawai"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/NoHP"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/strip"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Alamat"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvalamat_pegawai"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Alamat"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,7 +110,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvcabang_pegawai"
+                android:id="@+id/tvnama_cabang_layanan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -177,32 +121,6 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/strip"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Terdaftar"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/terdaftar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Terdaftar"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/ly_button"
@@ -212,24 +130,23 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/btn_lihat"
+                android:id="@+id/btnEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="0.5"
-                android:text="@string/pelanggan_lihat"
-                android:textColor="@android:color/white"
-                android:backgroundTint="@color/hijau"/>
+                android:backgroundTint="@color/kuning"
+                android:text="@string/Edit" />
 
             <Button
-                android:id="@+id/btn_hubungi"
+                android:id="@+id/btnHapus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:layout_weight="0.5"
-                android:text="@string/pelanggan_hubungi"
-                android:textColor="@android:color/white"
-                android:backgroundTint="@color/biru"/>
+                android:backgroundTint="@color/merah"
+                android:text="@string/Hapus" />
         </LinearLayout>
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/data_pelanggan"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pelanggan.data_pelanggan">
+    tools:context=".layanan.data_layanan">
 
     <LinearLayout
         android:id="@+id/nav"
@@ -24,32 +24,34 @@
             android:src="@drawable/baseline_arrow_back_24" />
 
         <TextView
-            android:id="@+id/tvjuduldatapelanggan"
+            android:id="@+id/tvjuduldatalayanan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="@string/Pelanggan"
+            android:text="@string/TambahPelangganBaru"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvdatapelanggan"
+        android:id="@+id/rvdatalayanan"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/card_data_pelanggan"
-        android:layout_below="@id/nav"
-        />
+        android:layout_height="match_parent"
+        tools:ignore="MissingRecyclerViewAdapter"
+        tools:itemCount="10"
+        tools:listitem="@layout/card_data_layanan" 
+        android:layout_below="@id/nav"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_tambah_pelanggan"
+        android:id="@+id/fab_tambah_layanan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
         android:contentDescription="Tambah Pelanggan"
         android:src="@drawable/tambah_24"
-        app:backgroundTint="@color/colorPrimary"
-        android:layout_margin="16dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"/>
+        app:backgroundTint="@color/colorPrimary" />
+
 </RelativeLayout>

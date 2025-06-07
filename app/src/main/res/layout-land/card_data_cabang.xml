@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_data_pegawai"
+    android:id="@+id/card_data_cabang"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -29,17 +29,17 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="8dp"
-                android:text="@string/DataPegawai"
+                android:text="@string/DataCabang"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvid_pegawai"
+                android:id="@+id/tvid_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="3"
-                android:text="@string/pelanggan_id"
+                android:text="@string/cabang_id"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
@@ -48,6 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/strip"
             android:orientation="horizontal">
 
             <TextView
@@ -60,13 +61,39 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnama_pegawai"
+                android:id="@+id/tvnama_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 android:text="@string/Nama"
+                android:textAlignment="textEnd"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="@string/Alamat"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvalamat_cabang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="@string/Alamat"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -84,10 +111,10 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 android:text="@string/Status"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/tvstatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -113,93 +140,13 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnohp_pegawai"
+                android:id="@+id/tvnohp_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 android:text="@string/NoHP"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/strip"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Alamat"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvalamat_pegawai"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Alamat"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Cabang"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvcabang_pegawai"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Cabang"
-                android:textAlignment="textEnd"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/strip"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Terdaftar"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/terdaftar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
-                android:text="@string/Terdaftar"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -231,5 +178,7 @@
                 android:textColor="@android:color/white"
                 android:backgroundTint="@color/biru"/>
         </LinearLayout>
+
+
     </LinearLayout>
 </androidx.cardview.widget.CardView>

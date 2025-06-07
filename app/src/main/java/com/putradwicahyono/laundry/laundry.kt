@@ -19,7 +19,7 @@ import com.google.firebase.database.*
 import com.putradwicahyono.laundry.layanan.data_layanan
 import com.putradwicahyono.laundry.transaksi.transaksi
 
-@Suppress("DEPRECATION")
+
 class laundry : AppCompatActivity() {
 
     lateinit var card_pelanggan: CardView
@@ -52,6 +52,16 @@ class laundry : AppCompatActivity() {
         val tanggal_format = SimpleDateFormat("EEEE, dd MMMM yyyy", locale)
         val tanggal_sekarang = tanggal_format.format(Date())
         tv_tanggal.text = tanggal_sekarang
+
+        val sloganlist = arrayOf(
+            getString(R.string.Slogan1),
+            getString(R.string.Slogan2),
+            getString(R.string.Slogan3)
+        )
+
+        val tvslogan = findViewById<TextView>(R.id.tvslogan)
+        slogan(tvslogan, sloganlist)
+
 
         init()
         pindah()
@@ -110,6 +120,11 @@ class laundry : AppCompatActivity() {
             toast.show()
         }
         jedaWaktuTekan = System.currentTimeMillis()
+    }
+
+    fun slogan(textView: TextView, texts: Array<String>) {
+        val randomText = texts.random()
+        textView.text = randomText
     }
 
 }

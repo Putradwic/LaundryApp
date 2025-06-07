@@ -20,6 +20,7 @@ class data_layanan_adapter(private val listLayanan: ArrayList<ModelLayanan>,
             .inflate(R.layout.card_data_layanan, parent, false)
         return ViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = listLayanan[position]
         holder.tvID.text = item.id_layanan
