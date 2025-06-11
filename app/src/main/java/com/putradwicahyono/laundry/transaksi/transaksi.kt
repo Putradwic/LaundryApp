@@ -19,12 +19,18 @@ import com.putradwicahyono.laundry.model_data.ModelTambahan
 
 class transaksi : AppCompatActivity() {
 
-
     private lateinit var backarrow: ImageView
     private lateinit var namaPelangganText: TextView
     private lateinit var noHPPelangganText: TextView
     private lateinit var namaLayananText: TextView
     private lateinit var hargaLayananText: TextView
+    private lateinit var btProses: Button // Add this line
+
+    private var selectedPelangganNama: String? = null
+    private var selectedPelangganNoHp: String? = null
+    private var selectedLayananNama: String? = null
+    private var selectedLayananHarga: Int = 0
+
 
     private val pilihPelangganLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -76,6 +82,7 @@ class transaksi : AppCompatActivity() {
         noHPPelangganText = findViewById(R.id.tvnohp_pelanggan)
         namaLayananText = findViewById(R.id.tvnama_layanan)
         hargaLayananText = findViewById(R.id.tvharga_layanan)
+        btProses = findViewById(R.id.btproses) // Initialize the button
     }
     fun back() {
         backarrow.setOnClickListener {
@@ -98,11 +105,21 @@ class transaksi : AppCompatActivity() {
             val intent = Intent(this, Pilih_tambahan::class.java)
             pilihTambahanLauncher.launch(intent)
         }
-//        findViewById<Button>(R.id.btproses).setOnClickListener {
-//            val intent = Intent(this, konfirmasiTransaksi::class.java)
-//            intent.putExtra("list_tambahan", ArrayList(listTambahanDipilih))
-//            startActivity(intent)
-//        }
+        // Corrected btProses click listener
+        btProses.setOnClickListener {
+            if (selectedPelangganNama.isNullOrEmpty() || selectedLayananNama.isNullOrEmpty()) {
+                Toast.makeText(this, "Mohon pilih pelanggan dan layanan utama terlebih dahulu.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, konfirmasiTransaksi::class.java).apply {
+                    putExtra("namaPelanggan", selectedPelangganNama)
+                    putExtra("noHp", selectedPelangganNoHp)
+                    putExtra("namaLayanan", selectedLayananNama)
+                    putExtra("hargaLayanan", selectedLayananHarga)
+                    putExtra("listTambahan", ArrayList(listTambahanDipilih))
+                }
+                startActivity(intent)
+            }
+        }
     }
 
     private fun handlePilihPelangganResult(result: androidx.activity.result.ActivityResult) {
@@ -112,6 +129,8 @@ class transaksi : AppCompatActivity() {
             val hp = data?.getStringExtra("nohp")
 
             if (!nama.isNullOrEmpty() && !hp.isNullOrEmpty()) {
+                selectedPelangganNama = nama
+                selectedPelangganNoHp = hp
                 namaPelangganText.text = "${getString(R.string.Nama)} : $nama"
                 noHPPelangganText.text = "${getString(R.string.NoHP)} : $hp"
             } else {
@@ -127,6 +146,8 @@ class transaksi : AppCompatActivity() {
             val harga = data?.getIntExtra("harga", -1)
 
             if (!namalayanan.isNullOrEmpty() && harga != -1) {
+                selectedLayananNama = namalayanan
+                selectedLayananHarga = harga ?: 0
                 namaLayananText.text = "${getString(R.string.Layanan)} : $namalayanan"
 
                 val hargaFormatted = "Rp %,d".format(harga).replace(',', '.')
@@ -154,7 +175,4 @@ class transaksi : AppCompatActivity() {
             }
         }
     }
-
-
-
 }

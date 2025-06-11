@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.Laundry"
         tools:targetApi="31">
         <activity
+            android:name=".transaksi.Invoice"
+            android:exported="false" />
+        <activity
             android:name=".transaksi.konfirmasiTransaksi"
             android:exported="false" />
         <activity

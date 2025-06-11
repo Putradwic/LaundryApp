@@ -101,26 +101,32 @@ class laundry : AppCompatActivity() {
         card_pelanggan.setOnClickListener{
             val intent = Intent(this, data_pelanggan::class.java)
             startActivity(intent)
+            finish()
         }
         card_pegawai.setOnClickListener{
             val intent = Intent(this, data_pegawai::class.java)
             startActivity(intent)
+            finish()
         }
         cardlayanan.setOnClickListener{
             val intent = Intent(this, data_layanan::class.java)
             startActivity(intent)
+            finish()
         }
         card_transaksi.setOnClickListener{
             val intent = Intent(this, transaksi::class.java)
             startActivity(intent)
+            finish()
         }
         card_cabang.setOnClickListener{
             val intent = Intent(this, data_cabang::class.java)
             startActivity(intent)
+            finish()
         }
         card_tambahan.setOnClickListener{
             val intent = Intent(this, data_tambahan::class.java)
             startActivity(intent)
+            finish()
         }
 
     }
