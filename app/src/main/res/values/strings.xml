@@ -109,4 +109,44 @@
     <string name="Slogan2" translatable="false">Slogan2</string>
     <string name="Slogan3" translatable="false">Slogan3</string>
     <string name="Komitmen" translatable="false">Komitmen</string>
+    <string name="DetailCabang" translatable="false">DetailCabang</string>
+    <string name="TambahCabangBaru" translatable="false">TambahCabangBaru</string>
+    <string name="BerhasilUpdateCabang" translatable="false">BerhasilUpdateCabang</string>
+    <string name="GagalUpdateCabang" translatable="false">GagalUpdateCabang</string>
+    <string name="BerhasilTambahCabang" translatable="false">BerhasilTambahCabang</string>
+    <string name="GagalTambahCabang" translatable="false">GagalTambahCabang</string>
+    <string name="EditCabang" translatable="false">EditCabang</string>
+    <string name="HapusCabang" translatable="false">HapusCabang</string>
+    <string name="KonfirmasiHapus2" translatable="false">KonfirmasiHapus2</string>
+    <string name="KonfirmasiHapus3" translatable="false">KonfirmasiHapus3</string>
+    <string name="HapusBerhasil2" translatable="false">HapusBerhasil2</string>
+    <string name="HapusGagal2" translatable="false">HapusGagal2</string>
+    <string name="HapusGagal3" translatable="false">HapusGagal3</string>
+    <string name="HapusBerhasil3" translatable="false">HapusBerhasil3</string>
+    <string name="HapusLayanan" translatable="false">HapusLayanan</string>
+    <string name="HapusGagal1" translatable="false">HapusGagal1</string>
+    <string name="TambahTambahanLayanan" translatable="false">TambahTambahanLayanan</string>
+    <string name="DataTambahan" translatable="false">DataTambahan</string>
+    <string name="DetailTambahan" translatable="false">DetailTambahan</string>
+    <string name="NamaTitikDua" translatable="false">NamaTitikDua</string>
+    <string name="NoHPTitikDua" translatable="false">NoHPTitikDua</string>
+    <string name="AlamatTitikDua" translatable="false">AlamatTitikDua</string>
+    <string name="PilihPelanggan" translatable="false">PilihPelanggan</string>
+    <string name="HargaTititkDua" translatable="false">HargaTititkDua</string>
+    <string name="PilihLayanan" translatable="false">PilihLayanan</string>
+    <string name="PilihTambahan" translatable="false">PilihTambahan</string>
+    <string name="HapusTambahan" translatable="false">HapusTambahan</string>
+    <string name="KonfirmasiHapus4" translatable="false">KonfirmasiHapus4</string>
+    <string name="HapusBerhasil4" translatable="false">HapusBerhasil4</string>
+    <string name="HapusGagal4" translatable="false">HapusGagal4</string>
+    <string name="BerhasilUpdateTambahan" translatable="false">BerhasilUpdateTambahan</string>
+    <string name="GagalUpdateTambahan" translatable="false">GagalUpdateTambahan</string>
+    <string name="BerhasilTambahTambahan" translatable="false">BerhasilTambahTambahan</string>
+    <string name="GagalTambahTambahan" translatable="false">GagalTambahTambahan</string>
+    <string name="EditTambahan" translatable="false">EditTambahan</string>
+    <string name="KonfirmasiData" translatable="false">KonfirmasiData</string>
+    <string name="Proses" translatable="false">Proses</string>
+    <string name="LayananTambahan" translatable="false">LayananTambahan</string>
+    <string name="LayananUtama" translatable="false">LayananUtama</string>
+    <string name="Bayar" translatable="false">Bayar</string>
 </resources>

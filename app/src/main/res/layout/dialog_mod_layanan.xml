@@ -32,7 +32,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvid_pegawai"
+                android:id="@+id/tvid_layanan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

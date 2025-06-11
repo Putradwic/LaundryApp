@@ -9,6 +9,8 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.putradwicahyono.laundry.R
 import com.putradwicahyono.laundry.model_data.ModelLayanan
+import java.text.NumberFormat
+import java.util.Locale
 
 
 class data_layanan_adapter(private val listLayanan: ArrayList<ModelLayanan>,
@@ -25,9 +27,7 @@ class data_layanan_adapter(private val listLayanan: ArrayList<ModelLayanan>,
         val item = listLayanan[position]
         holder.tvID.text = item.id_layanan
         holder.tvNama.text = item.nama_layanan
-        val harga = item.harga_layanan ?: 0
-        val formattedPrice = "Rp %,d".format(harga).replace(',', '.')
-        holder.tvHarga.text = formattedPrice
+        holder.tvHarga.text = "Rp %,d".format(item.harga_layanan ?: 0).replace(',', '.')
         holder.tvcabang.text = item.cabang
 
         holder.cvCARD.setOnLongClickListener{

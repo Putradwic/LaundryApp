@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dialog_mod_pegawai"
+    android:id="@+id/dialog_mod_cabang"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="6dp">
@@ -26,13 +26,13 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="8dp"
-                android:text="@string/DetailLayanan"
+                android:text="@string/DetailCabang"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvid_pegawai"
+                android:id="@+id/tvid_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -58,7 +58,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnama_layanan"
+                android:id="@+id/tvnama_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -81,20 +81,21 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Harga"
+                android:text="@string/Alamat"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvharga_layanan"
+                android:id="@+id/tvalamat_cabang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Harga"
+                android:text="@string/Alamat"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,20 +107,47 @@
                 android:layout_weight="1"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Cabang"
+                android:text="@string/Status"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tvnama_cabang_layanan"
+                android:id="@+id/tvstatus"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
-                android:text="@string/Cabang"
+                android:text="@string/Status"
                 android:textAlignment="textEnd"
                 android:textSize="16sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="@string/NoHP"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvnohp_cabang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="@string/NoHP"
+                android:textAlignment="textEnd"
+                android:textSize="16sp" />
+        </LinearLayout>
+
 
 
         <LinearLayout

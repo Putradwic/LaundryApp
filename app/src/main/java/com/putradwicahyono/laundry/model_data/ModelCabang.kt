@@ -5,4 +5,5 @@ class ModelCabang (
     val  nama_cabang: String? = null,
     val  alamat_cabang: String? = null,
     val  nohp_cabang: String? = null,
+    val  status: String? = null,
 )

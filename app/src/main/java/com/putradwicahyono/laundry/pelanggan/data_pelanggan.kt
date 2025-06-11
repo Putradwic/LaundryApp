@@ -1,6 +1,7 @@
 package com.putradwicahyono.laundry.pelanggan
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
@@ -82,6 +83,7 @@ class data_pelanggan : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
     }
 
     // Ambil data dari firebase
@@ -95,9 +97,10 @@ class data_pelanggan : AppCompatActivity() {
                         val pelanggan = dataSnapshot.getValue(ModelPelanggan::class.java)
                         pelanggan?.let { listPelanggan.add(it) }
                     }
-                    val adapter = data_pelanggan_adapter(listPelanggan) { pelanggan ->
-                        munculDialogPelanggan(pelanggan)
-                    }
+                    val adapter = data_pelanggan_adapter(
+                        listPelanggan,
+                        onClick = { pelanggan -> munculDialogPelanggan(pelanggan) }
+                    )
                     rvdatapelanggan.adapter = adapter
                     adapter.notifyDataSetChanged()
                 }
@@ -209,4 +212,8 @@ class data_pelanggan : AppCompatActivity() {
             finish()
         }
     }
+
+
+
+
 }

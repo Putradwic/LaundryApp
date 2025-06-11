@@ -16,7 +16,9 @@ import java.util.*
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.*
+import com.putradwicahyono.laundry.cabang.data_cabang
 import com.putradwicahyono.laundry.layanan.data_layanan
+import com.putradwicahyono.laundry.tambahan.data_tambahan
 import com.putradwicahyono.laundry.transaksi.transaksi
 
 
@@ -26,6 +28,8 @@ class laundry : AppCompatActivity() {
     lateinit var card_pegawai: CardView
     lateinit var cardlayanan: CardView
     lateinit var card_transaksi: CardView
+    lateinit var card_cabang: CardView
+    lateinit var card_tambahan: CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,11 +43,13 @@ class laundry : AppCompatActivity() {
         val waktu_sekarang = Calendar.getInstance()
         val jam_sekarang = waktu_sekarang.get(Calendar.HOUR_OF_DAY)
 
-        val sambutan = when {
-            jam_sekarang in 0..10 -> getString(R.string.SelamatPagi)
-            jam_sekarang in 11..14 -> getString(R.string.SelamatSiang)
-            jam_sekarang in 15..18 -> getString(R.string.SelamatSore)
-            else -> getString(R.string.SelamatMalam)
+        val usn = intent.getStringExtra("USERNAME") ?: "User"
+
+        val sambutan = when (jam_sekarang) {
+            in 0..10 -> getString(R.string.SelamatPagi) + " $usn"
+            in 11..14 -> getString(R.string.SelamatSiang) + " $usn"
+            in 15..18 -> getString(R.string.SelamatSore) + " $usn"
+            else -> getString(R.string.SelamatMalam) + " $usn"
         }
 
         tv_sambutan.text = sambutan
@@ -88,6 +94,8 @@ class laundry : AppCompatActivity() {
         card_pegawai = findViewById(R.id.cardpegawai)
         cardlayanan = findViewById(R.id.cardlayanan)
         card_transaksi = findViewById(R.id.card_transaksi)
+        card_cabang = findViewById(R.id.cardcabang)
+        card_tambahan = findViewById(R.id.cardtambahan)
     }
     private fun pindah(){
         card_pelanggan.setOnClickListener{
@@ -104,6 +112,14 @@ class laundry : AppCompatActivity() {
         }
         card_transaksi.setOnClickListener{
             val intent = Intent(this, transaksi::class.java)
+            startActivity(intent)
+        }
+        card_cabang.setOnClickListener{
+            val intent = Intent(this, data_cabang::class.java)
+            startActivity(intent)
+        }
+        card_tambahan.setOnClickListener{
+            val intent = Intent(this, data_tambahan::class.java)
             startActivity(intent)
         }
 

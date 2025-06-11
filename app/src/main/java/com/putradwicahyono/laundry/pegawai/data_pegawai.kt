@@ -193,14 +193,14 @@ class data_pegawai : AppCompatActivity() {
     private fun deletePegawai(pegawaiId: String) {
         myRef.child(pegawaiId).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(this, this.getString(R.string.Hapusgagal1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, data_pegawai::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusGagal1), Toast.LENGTH_SHORT).show()
             }
     }
 

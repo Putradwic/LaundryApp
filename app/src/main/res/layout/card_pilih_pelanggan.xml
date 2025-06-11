@@ -24,11 +24,11 @@
 
             <TextView
                 android:id="@+id/tvid_pelanggan"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:layout_margin="5dp"
-                android:text="@string/pelanggan_id"
+                android:layout_marginHorizontal="10dp"
+                android:padding="5dp"
+                android:text="@string/Pelanggan"
                 android:textSize="16sp"
                 android:textStyle="bold"/>
         </LinearLayout>
@@ -40,15 +40,13 @@
 
         <TextView
             android:id="@+id/tvnama_pelanggan"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginVertical="3dp"
+            android:padding="5dp"
             android:text="@string/Nama"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textAlignment="textStart"
-            android:paddingHorizontal="10dp"/>
+            android:layout_marginHorizontal="5dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -60,18 +58,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginVertical="3dp"
-            android:text="@string/Alamat"
+            android:padding="5dp"
+            android:layout_marginStart="5dp"
+            android:text="@string/AlamatTitikDua"
             android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tvalamat_pelanggan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_marginEnd="10dp"
-            android:layout_marginVertical="3dp"
+            android:layout_weight="5"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
             android:text="@string/Alamat"
             android:textSize="12sp"
             android:textAlignment="textStart"/>
@@ -85,8 +83,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:layout_marginVertical="3dp"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
                 android:text="@string/pelanggan_nohp"
                 android:textSize="12sp" />
 
@@ -94,9 +92,9 @@
                 android:id="@+id/tvnohp_pelanggan"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginEnd="10dp"
-                android:layout_marginVertical="3dp"
+                android:layout_weight="2.5"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp"
                 android:text="@string/pelanggan_nohp"
                 android:textSize="12sp"
                 android:textAlignment="textStart"/>

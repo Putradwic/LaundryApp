@@ -14,4 +14,7 @@
     <color name="biru">#2196F3</color>
     <color name="hijau">#4CAF50</color>
     <color name="kuning">#FFD700</color>
+    <color name="sms">#157DEC</color>
+    <color name="telegram">#38ACEC</color>
+    <color name="wa">#48C072</color>
 </resources>

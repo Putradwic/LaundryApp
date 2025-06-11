@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="@string/TambahPelangganBaru"
+            android:text="@string/Layanan"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />

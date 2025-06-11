@@ -1,5 +1,7 @@
 package com.putradwicahyono.laundry.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,9 +16,9 @@ import java.util.Date
 import java.util.Locale
 
 
-class data_pelanggan_adapter(private val listPelanggan: ArrayList<ModelPelanggan>,
-                             private val onClick: (ModelPelanggan) -> Unit) :
-    RecyclerView.Adapter<data_pelanggan_adapter.ViewHolder>() {
+    class data_pelanggan_adapter(private val listPelanggan: ArrayList<ModelPelanggan>,
+                                 private val onClick: (ModelPelanggan) -> Unit):
+        RecyclerView.Adapter<data_pelanggan_adapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -38,7 +40,13 @@ class data_pelanggan_adapter(private val listPelanggan: ArrayList<ModelPelanggan
             onClick(item)
             true
         }
-        holder.btHubungi.setOnClickListener{
+        holder.btHubungi.setOnClickListener {
+            val nohp = item.nohp_pelanggan ?: ""
+            val context = holder.itemView.context
+            val waIntent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://wa.me/62${nohp.trimStart('0')}")
+            }
+            context.startActivity(waIntent)
         }
         holder.btLihat.setOnClickListener{
             onClick(item)

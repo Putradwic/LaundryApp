@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".layanan.tambah_layanan">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,21 +15,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
                 android:id="@+id/backarrow"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:padding="5dp"
                 android:src="@drawable/baseline_arrow_back_24" />
 
             <TextView
                 android:id="@+id/tvjudul_tambah_layanan"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="11"
                 android:padding="10dp"
                 android:text="@string/TambahLayananBaru"
                 android:textAlignment="center"
@@ -40,101 +41,117 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/tvnama_pelanggan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:text="@string/Nama"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/etnama_layanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/edittext"
-                android:hint="@string/HintNama"
-                android:inputType="textPersonName"
-                android:maxLength="40"
-                android:padding="12dp"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvnama_layanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/Nama"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tvharga_layanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:text="@string/Harga"
-                android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/etnama_layanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/edittext"
+                    android:hint="@string/HintNama"
+                    android:maxLength="40"
+                    android:padding="12dp"
+                    android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/etharga_layanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/edittext"
-                android:hint="@string/HintHarga"
-                android:inputType="numberDecimal"
-                android:maxLength="12"
-                android:padding="12dp"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/tvharga_layanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/Harga"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/tvnama_cabang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="5dp"
-                android:text="@string/Cabang"
-                android:textSize="20sp" />
+                <EditText
+                    android:id="@+id/etharga_layanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/edittext"
+                    android:hint="@string/HintHarga"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/etnama_cabang"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/edittext"
-                android:hint="@string/HintCabang"
-                android:maxLength="32"
-                android:padding="12dp"
-                android:textSize="20sp" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/bttambah"
-                style="@style/colortext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="20dp"
-                android:padding="10dp"
-                android:text="@string/add"
-                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btedit"
-                style="@style/colortext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sunting"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginVertical="20dp"
-                android:padding="10dp"
-                android:visibility="gone"
-                />
+                <TextView
+                    android:id="@+id/tvnama_cabang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="@string/Cabang"
+                    android:textSize="20sp" />
 
+                <EditText
+                    android:id="@+id/etnama_cabang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/edittext"
+                    android:hint="@string/HintCabang"
+                    android:maxLength="32"
+                    android:padding="12dp"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/bttambah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:paddingHorizontal="50dp"
+                    android:paddingVertical="10dp"
+                    android:text="@string/add"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btedit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sunting"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="20dp"
+                    android:paddingHorizontal="50dp"
+                    android:paddingVertical="10dp"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:textSize="16sp"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-
 
 </ScrollView>

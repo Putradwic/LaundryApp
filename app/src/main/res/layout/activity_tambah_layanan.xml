@@ -45,7 +45,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/tvnama_pelanggan"
+                android:id="@+id/tvnama_layanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
@@ -61,7 +61,6 @@
                 android:layout_marginHorizontal="10dp"
                 android:background="@drawable/edittext"
                 android:hint="@string/HintNama"
-                android:inputType="textPersonName"
                 android:maxLength="40"
                 android:padding="12dp"
                 android:textSize="20sp" />

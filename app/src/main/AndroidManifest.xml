@@ -15,10 +15,16 @@
         android:theme="@style/Base.Theme.Laundry"
         tools:targetApi="31">
         <activity
-            android:name=".layanan.cari_layanan"
+            android:name=".transaksi.konfirmasiTransaksi"
             android:exported="false" />
         <activity
-            android:name=".pelanggan.pilih_pelanggan"
+            android:name=".transaksi.Pilih_tambahan"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.Pilih_layanan"
+            android:exported="false" />
+        <activity
+            android:name=".transaksi.Pilih_pelanggan"
             android:exported="false" />
         <activity
             android:name=".login"
@@ -34,7 +40,7 @@
             android:exported="false" />
         <activity
             android:name=".laundry"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".pelanggan.tambah_pelanggan"
             android:exported="false" />

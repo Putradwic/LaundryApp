@@ -139,8 +139,8 @@ class data_layanan : AppCompatActivity() {
         btnHapus.setOnClickListener {
             layanan.id_layanan?.let { id ->
                 konfrimasi(
-                    title = getString(R.string.HapusPegawai),
-                    message = "${getString(R.string.KonfirmasiHapus1)}, ${layanan.nama_layanan} ?",
+                    title = getString(R.string.HapusLayanan),
+                    message = "${getString(R.string.KonfirmasiHapus2)}, ${layanan.nama_layanan} ?",
                     onConfirm = {
                         deleteLayanan(id)
                     }
@@ -186,14 +186,14 @@ class data_layanan : AppCompatActivity() {
     private fun deleteLayanan(layananId: String) {
         myRef.child(layananId).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(this, this.getString(R.string.Hapusgagal1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil2), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, data_layanan::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
                 startActivity(intent)
                 finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, this.getString(R.string.HapusBerhasil1), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, this.getString(R.string.HapusBerhasil2), Toast.LENGTH_SHORT).show()
             }
     }
 

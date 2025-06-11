@@ -48,9 +48,12 @@ class login : AppCompatActivity() {
                 etpass.requestFocus()
             } else {
                 val intent = Intent(this, laundry::class.java)
+                intent.putExtra("USERNAME", username)
+                startActivity(intent)
                 startActivity(intent)
                 finish()
             }
+
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.putradwicahyono.laundry.adapter
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,8 +39,12 @@ class data_cabang_adapter(private val listCabang: ArrayList<ModelCabang>,
             true
         }
         holder.btHubungi.setOnClickListener{
-            onClick(item)
-            true
+            val nohp = item.nohp_cabang ?: ""
+            val context = holder.itemView.context
+            val waIntent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse("https://wa.me/62${nohp.trimStart('0')}")
+            }
+            context.startActivity(waIntent)
         }
     }
 
