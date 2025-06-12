@@ -150,4 +150,8 @@
     <string name="LayananTambahan">Additional Services</string>
     <string name="LayananUtama">Main Service</string>
     <string name="Bayar">Payment</string>
+    <string name="TotalBayar">Payment Amount</string>
+    <string name="PilihPelangganDulu">Select customers first to process</string>
+    <string name="PilihLayananUtama">Select the main service first to process</string>
+    <string name="NamaPelanggan">Customer Name</string>
 </resources>

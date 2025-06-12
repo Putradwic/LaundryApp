@@ -149,4 +149,8 @@
     <string name="LayananTambahan" translatable="false">LayananTambahan</string>
     <string name="LayananUtama" translatable="false">LayananUtama</string>
     <string name="Bayar" translatable="false">Bayar</string>
+    <string name="TotalBayar" translatable="false">TotalBayar</string>
+    <string name="PilihPelangganDulu" translatable="false">PilihPelangganDulu</string>
+    <string name="PilihLayananUtama" translatable="false">PilihLayananUtama</string>
+    <string name="NamaPelanggan" translatable="false">NamaPelanggan</string>
 </resources>

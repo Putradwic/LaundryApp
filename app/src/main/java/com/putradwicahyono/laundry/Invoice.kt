@@ -72,10 +72,10 @@ class Invoice : AppCompatActivity() {
         val hargaLayanan = intent.getIntExtra("hargaLayanan", 0)
         val listTambahan = intent.getSerializableExtra("listTambahan") as? ArrayList<ModelTambahan> ?: arrayListOf()
 
-        tvCustomerName.text = "Customer: $namaPelanggan"
-        tvCustomerPhone.text = "Phone: $noHp"
-        tvMainService.text = "Service: $namaLayanan"
-        tvMainServicePrice.text = "Price: ${formatRupiah(hargaLayanan)}"
+        tvCustomerName.text = "${getString(R.string.Nama)} : $namaPelanggan"
+        tvCustomerPhone.text = "${getString(R.string.NoHP)}: $noHp"
+        tvMainService.text = "${getString(R.string.LayananUtama)}: $namaLayanan"
+        tvMainServicePrice.text = "${getString(R.string.Harga)}: ${formatRupiah(hargaLayanan)}"
 
         // Calculate total price
         var totalPrice = hargaLayanan

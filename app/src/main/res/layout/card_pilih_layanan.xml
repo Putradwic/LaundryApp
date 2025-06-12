@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:background="@color/colorPrimary">
+            android:background="@color/sms">
 
             <TextView
                 android:id="@+id/tvid_layanan"
@@ -29,7 +29,7 @@
                 android:text="@string/Layanan"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:paddingHorizontal="15dp" />
+                android:paddingHorizontal="15dp"/>
         </LinearLayout>
 
         <LinearLayout

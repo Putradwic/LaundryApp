@@ -6,111 +6,184 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".transaksi.Invoice">
 
+    <!-- Header -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="INVOICE"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:id="@+id/tv_invoice_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Invoice ID: INV-XXXX"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/tv_invoice_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Date: DD Month YYYY, HH:MM"
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Customer Details:"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/tv_customer_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Customer: "
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp"/>
+    <View
+        android:layout_width="60dp"
+        android:layout_height="2dp"
+        android:background="#2196F3"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"/>
 
-    <TextView
-        android:id="@+id/tv_customer_phone"
+    <!-- Invoice Info -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone: "
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_margin="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/tv_invoice_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Invoice ID: INV-XXXX"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_invoice_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date: DD Month YYYY, HH:MM"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Customer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer Details"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer: "
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_customer_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone: "
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Main Service -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Service"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tv_main_service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service: "
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/tv_main_service_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price: "
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Additional Services -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Service Details:"
+        android:text="Additional Services"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:id="@+id/tv_main_service_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main Service: "
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp"/>
-
-    <TextView
-        android:id="@+id/tv_main_service_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Price: "
-        android:textSize="16sp"
-        android:layout_marginBottom="16dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Additional Services:"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp"
+        android:paddingHorizontal="20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_additional_services"
         android:layout_width="match_parent"
+        android:paddingHorizontal="15dp"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         tools:listitem="@layout/card_konfirmasi_tambahan"/>
 
+    <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
+        android:background="#CCCCCC"
         android:layout_marginBottom="16dp"/>
 
+    <!-- Total -->
     <TextView
         android:id="@+id/tv_total_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total: "
-        android:textSize="20sp"
+        android:text="Total: Rp 0"
+        android:textSize="22sp"
         android:textStyle="bold"
-        android:textAlignment="viewEnd"/>
+        android:textAlignment="center"
+        android:textColor="#333333"
+        android:padding="12dp"
+        android:background="#F5F5F5"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_whatsapp"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="WhatsApp"
+            android:textColor="@color/white"
+            android:backgroundTint="#25D366"
+            app:cornerRadius="6dp"/>
+
+        <Button
+            android:id="@+id/btn_print"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="5dp"
+            android:text="Print"
+            android:textColor="@color/white"
+            android:backgroundTint="#666666"
+            app:cornerRadius="6dp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -150,4 +150,8 @@
     <string name="LayananTambahan">Layanan Tambahan</string>
     <string name="LayananUtama">Layanan Utama</string>
     <string name="Bayar">Pembayaran</string>
+    <string name="TotalBayar">Total Bayar</string>
+    <string name="PilihPelangganDulu">Pilih pelanggan terlebih dahulu untuk memproses</string>
+    <string name="PilihLayananUtama">Pilih layanan utama terlebih dahulu untuk memproses</string>
+    <string name="NamaPelanggan">Nama Pelanggan</string>
 </resources>

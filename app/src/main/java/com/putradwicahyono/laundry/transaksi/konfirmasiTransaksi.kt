@@ -76,10 +76,10 @@ class konfirmasiTransaksi : AppCompatActivity() {
         val formatter = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
         val hargaFormatted = formatter.format(hargaLayanan)
 
-        tvNamaPelanggan.text = "Nama: $namaPelanggan"
-        tvNoHp.text = "No. HP: $noHp"
-        tvNamaLayanan.text = "Layanan: $namaLayanan"
-        tvHargaLayanan.text = "Harga: $hargaFormatted"
+        tvNamaPelanggan.text = "${getString(R.string.Nama)} : $namaPelanggan"
+        tvNoHp.text = "${getString(R.string.NoHP)} : $noHp"
+        tvNamaLayanan.text = "${getString(R.string.Layanan)} : $namaLayanan"
+        tvHargaLayanan.text = "${getString(R.string.Harga)} : $hargaFormatted"
 
         totalHarga = hargaLayanan // Initialize total price with main service price
         listTambahan.forEach {
@@ -107,21 +107,21 @@ class konfirmasiTransaksi : AppCompatActivity() {
         val btProses = findViewById<Button>(R.id.btproses)
         val btTambahan = findViewById<Button>(R.id.bttambahan) // This is the "Batal" button in your layout.
 
-//        btProses.setOnClickListener {
-//            // Logic to save the transaction to Firebase or local database
-//            // ... (Add your transaction saving logic here) ...
-//
-//            // Then, navigate to InvoiceActivity
-//            val intent = Intent(this, Invoice::class.java).apply {
-//                putExtra("namaPelanggan", namaPelanggan)
-//                putExtra("noHp", noHp)
-//                putExtra("namaLayanan", namaLayanan)
-//                putExtra("hargaLayanan", hargaLayanan)
-//                putExtra("listTambahan", listTambahan) // Pass the entire list
-//            }
-//            startActivity(intent)
-//            finish()
-//        }
+            btProses.setOnClickListener {
+                // Logic to save the transaction to Firebase or local database
+                // ... (Add your transaction saving logic here) ...
+
+                // Then, navigate to InvoiceActivity
+                val intent = Intent(this, Invoice::class.java).apply {
+                    putExtra("namaPelanggan", namaPelanggan)
+                    putExtra("noHp", noHp)
+                    putExtra("namaLayanan", namaLayanan)
+                    putExtra("hargaLayanan", hargaLayanan)
+                    putExtra("listTambahan", listTambahan) // Pass the entire list
+                }
+                startActivity(intent)
+                finish()
+            }
 
         btTambahan.setOnClickListener { // This is the "Batal" button
             // Navigate back to the previous activity (transaksi)

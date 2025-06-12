@@ -24,7 +24,7 @@ class transaksi : AppCompatActivity() {
     private lateinit var noHPPelangganText: TextView
     private lateinit var namaLayananText: TextView
     private lateinit var hargaLayananText: TextView
-    private lateinit var btProses: Button // Add this line
+    private lateinit var btProses: Button
 
     private var selectedPelangganNama: String? = null
     private var selectedPelangganNoHp: String? = null
@@ -107,18 +107,20 @@ class transaksi : AppCompatActivity() {
         }
         // Corrected btProses click listener
         btProses.setOnClickListener {
-            if (selectedPelangganNama.isNullOrEmpty() || selectedLayananNama.isNullOrEmpty()) {
-                Toast.makeText(this, "Mohon pilih pelanggan dan layanan utama terlebih dahulu.", Toast.LENGTH_SHORT).show()
+            if (selectedPelangganNama.isNullOrEmpty()) {
+                Toast.makeText(this, getString(R.string.PilihPelangganDulu), Toast.LENGTH_SHORT).show()
+            } else if (selectedLayananNama.isNullOrEmpty()) {
+                Toast.makeText(this, getString(R.string.PilihLayananUtama), Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(this, konfirmasiTransaksi::class.java).apply {
-                    putExtra("namaPelanggan", selectedPelangganNama)
-                    putExtra("noHp", selectedPelangganNoHp)
-                    putExtra("namaLayanan", selectedLayananNama)
-                    putExtra("hargaLayanan", selectedLayananHarga)
-                    putExtra("listTambahan", ArrayList(listTambahanDipilih))
-                }
-                startActivity(intent)
+            val intent = Intent(this, konfirmasiTransaksi::class.java).apply {
+                putExtra("namaPelanggan", selectedPelangganNama)
+                putExtra("noHp", selectedPelangganNoHp)
+                putExtra("namaLayanan", selectedLayananNama)
+                putExtra("hargaLayanan", selectedLayananHarga)
+                putExtra("listTambahan", ArrayList(listTambahanDipilih))
             }
+            startActivity(intent)
+        }
         }
     }
 

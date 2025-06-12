@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/transaksi"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".transaksi.Pilih_pelanggan">
 
-    <!-- Navigation Bar -->
+    <!-- Header with back arrow and title -->
     <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_alignParentTop="true">
 
         <ImageView
             android:id="@+id/backarrow"
@@ -34,196 +35,213 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Main Content (Split into left and right) -->
+    <!-- Main content area divided into left and right -->
     <LinearLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_below="@id/header"
+        android:layout_above="@id/buttonPanel"
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <!-- Left Card (Original content) -->
-        <androidx.cardview.widget.CardView
+        <!-- Left side - Customer and Service Info -->
+        <LinearLayout
+            android:id="@+id/left_panel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="6dp">
+            android:orientation="vertical"
+            android:paddingEnd="5dp">
 
-            <ScrollView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="6dp">
 
-                <LinearLayout
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="10dp">
+                    android:layout_height="wrap_content">
 
-                    <!-- Data Pelanggan -->
-                    <TextView
-                        android:text="Data Pelanggan"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
+                        <!-- Data Pelanggan -->
                         <TextView
-                            android:id="@+id/tvnama_pelanggan"
-                            android:layout_width="0dp"
+                            android:text="@string/DataPelanggan"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textSize="16sp"
-                            android:text="@string/NamaTitikDua"
-                            android:paddingVertical="5dp"/>
-                    </LinearLayout>
+                            android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/tvnama_pelanggan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="14sp"
+                                android:text="@string/NamaTitikDua"
+                                android:paddingVertical="3dp"/>
+                        </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvnohp_pelanggan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:textSize="14sp"
+                                android:text="@string/NoHPTitikDua"
+                                android:paddingVertical="3dp"/>
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btpilihpelanggan"
+                            android:text="@string/PilihPelanggan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:backgroundTint="#27C5FF"
+                            android:textColor="#FFF"
+                            android:textSize="12sp" />
+
+                        <!-- Layanan Utama -->
                         <TextView
-                            android:id="@+id/tvnohp_pelanggan"
-                            android:layout_width="0dp"
+                            android:text="@string/LayananUtama"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:textSize="16sp"
-                            android:text="@string/NoHPTitikDua"
-                            android:paddingVertical="5dp"/>
-                    </LinearLayout>
+                            android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/btpilihpelanggan"
-                        android:text="Pilih Pelanggan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="#27C5FF"
-                        android:textColor="#FFF" />
+                            <TextView
+                                android:id="@+id/tvnama_layanan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="14sp"
+                                android:text="@string/layanan_nama"
+                                android:paddingVertical="3dp"/>
+                        </LinearLayout>
 
-                    <!-- Layanan Utama -->
-                    <TextView
-                        android:text="Layanan Utama"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="16dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/tvnama_layanan"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:textSize="16sp"
-                            android:text="@string/layanan_nama"
-                            android:paddingVertical="5dp"/>
-                    </LinearLayout>
+                            android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/tvharga_layanan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="2"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginVertical="3dp"
+                                android:text="@string/HargaTititkDua"
+                                android:textSize="14sp"
+                                android:textAlignment="textStart"/>
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tvharga_layanan"
-                            android:layout_width="0dp"
+                        <Button
+                            android:id="@+id/btpilihlayanan"
+                            android:text="@string/PilihLayanan"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginVertical="3dp"
-                            android:text="@string/HargaTititkDua"
-                            android:textSize="16sp"
-                            android:textAlignment="textStart"/>
+                            android:layout_marginTop="8dp"
+                            android:backgroundTint="#27C5FF"
+                            android:textColor="#FFF"
+                            android:textSize="12sp" />
                     </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
 
-                    <Button
-                        android:id="@+id/btpilihlayanan"
-                        android:text="Pilih Layanan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:backgroundTint="#27C5FF"
-                        android:textColor="#FFF" />
-                </LinearLayout>
-            </ScrollView>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
-        <!-- Right Card (Additional services and buttons) -->
-        <androidx.cardview.widget.CardView
+        <!-- Right side - Additional Services -->
+        <LinearLayout
+            android:id="@+id/right_panel"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            app:cardElevation="4dp"
-            app:cardCornerRadius="6dp">
+            android:orientation="vertical"
+            android:paddingStart="5dp">
 
-            <LinearLayout
+            <TextView
+                android:text="@string/LayananTambahan"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"/>
 
-                <TextView
-                    android:text="Layanan Tambahan"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvtambahan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"/>
+                    tools:listitem="@layout/card_pilih_layanan"/>
 
-                <androidx.core.widget.NestedScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
+            </androidx.core.widget.NestedScrollView>
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvtambahan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        tools:listitem="@layout/card_pilih_layanan"/>
-                </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/buttonPanel"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
-
-                    <Button
-                        android:id="@+id/bttambahan"
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#FFC107"
-                        android:text="Tambahan"
-                        android:textColor="#FFF" />
-
-                    <Button
-                        android:id="@+id/btproses"
-                        android:layout_width="0dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#4CAF50"
-                        android:text="Proses"
-                        android:textColor="#FFF" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
     </LinearLayout>
-</LinearLayout>
+
+    <!-- Footer with action buttons -->
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/bttambahan"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFC107"
+            android:text="@string/Tambahan"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btproses"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#4CAF50"
+            android:text="@string/Proses"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+</RelativeLayout>
