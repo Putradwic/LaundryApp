@@ -133,7 +133,6 @@ class Invoice : AppCompatActivity() {
             startActivity(intent)
 
         } catch (e: Exception) {
-            // Jika WhatsApp tidak terinstall, buka di aplikasi lain
             shareInvoiceToOtherApps(invoiceText)
         }
     }
