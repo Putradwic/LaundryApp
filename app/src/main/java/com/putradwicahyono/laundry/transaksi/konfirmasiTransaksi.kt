@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -89,15 +90,7 @@ class konfirmasiTransaksi : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        adapterTambahan = konfirmasi_tambahan_adapter(listTambahan) { tambahan ->
-            // Optionally, you can enable removal of additional services here if needed.
-            // For now, in a confirmation screen, we might not want to remove items directly.
-            // If you want to allow removal, uncomment the following lines and handle UI updates.
-            // totalHarga -= tambahan.harga_tambahan ?: 0
-            // listTambahan.remove(tambahan)
-            // adapterTambahan.notifyDataSetChanged()
-            // updateTotal()
-        }
+        adapterTambahan = konfirmasi_tambahan_adapter(listTambahan)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapterTambahan
@@ -107,21 +100,9 @@ class konfirmasiTransaksi : AppCompatActivity() {
         val btProses = findViewById<Button>(R.id.btproses)
         val btTambahan = findViewById<Button>(R.id.bttambahan) // This is the "Batal" button in your layout.
 
-            btProses.setOnClickListener {
-                // Logic to save the transaction to Firebase or local database
-                // ... (Add your transaction saving logic here) ...
-
-                // Then, navigate to InvoiceActivity
-                val intent = Intent(this, Invoice::class.java).apply {
-                    putExtra("namaPelanggan", namaPelanggan)
-                    putExtra("noHp", noHp)
-                    putExtra("namaLayanan", namaLayanan)
-                    putExtra("hargaLayanan", hargaLayanan)
-                    putExtra("listTambahan", listTambahan) // Pass the entire list
-                }
-                startActivity(intent)
-                finish()
-            }
+        btProses.setOnClickListener {
+            showPaymentDialog()
+        }
 
         btTambahan.setOnClickListener { // This is the "Batal" button
             // Navigate back to the previous activity (transaksi)
@@ -129,6 +110,62 @@ class konfirmasiTransaksi : AppCompatActivity() {
             finish()
 
         }
+    }
+
+    private fun showPaymentDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.cardmetode, null)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(true)
+            .create()
+
+        // Set dialog window properties for better appearance
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        // Get button references
+        val btnQris = dialogView.findViewById<Button>(R.id.btn_qris)
+        val btnBayarNanti = dialogView.findViewById<Button>(R.id.btn_bayar_nanti)
+        val btnTunai = dialogView.findViewById<Button>(R.id.btn_tunai)
+        val btnCancel = dialogView.findViewById<Button>(R.id.btn_cancel)
+
+        // QRIS button click
+        btnQris.setOnClickListener {
+            dialog.dismiss()
+            goToInvoice("QRIS")
+        }
+
+        // Bayar Nanti button click
+        btnBayarNanti.setOnClickListener {
+            dialog.dismiss()
+            goToInvoice("Bayar Nanti")
+        }
+
+        // Tunai button click
+        btnTunai.setOnClickListener {
+            dialog.dismiss()
+            goToInvoice("Tunai")
+        }
+
+        // Cancel button click
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
+
+    private fun goToInvoice(metodePembayaran: String) {
+        val intent = Intent(this, Invoice::class.java).apply {
+            putExtra("namaPelanggan", namaPelanggan)
+            putExtra("noHp", noHp)
+            putExtra("namaLayanan", namaLayanan)
+            putExtra("hargaLayanan", hargaLayanan)
+            putExtra("listTambahan", listTambahan)
+            putExtra("metodePembayaran", metodePembayaran) // Tambah metode pembayaran
+        }
+        startActivity(intent)
+        finish()
     }
 
     private fun updateTotal() {

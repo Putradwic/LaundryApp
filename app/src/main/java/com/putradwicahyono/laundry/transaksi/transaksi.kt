@@ -26,6 +26,7 @@ class transaksi : AppCompatActivity() {
     private lateinit var hargaLayananText: TextView
     private lateinit var btProses: Button
 
+
     private var selectedPelangganNama: String? = null
     private var selectedPelangganNoHp: String? = null
     private var selectedLayananNama: String? = null
@@ -177,4 +178,7 @@ class transaksi : AppCompatActivity() {
             }
         }
     }
+
+
+
 }

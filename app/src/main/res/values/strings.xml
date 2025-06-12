@@ -153,4 +153,7 @@
     <string name="PilihPelangganDulu" translatable="false">PilihPelangganDulu</string>
     <string name="PilihLayananUtama" translatable="false">PilihLayananUtama</string>
     <string name="NamaPelanggan" translatable="false">NamaPelanggan</string>
+    <string name="PilihMetode" translatable="false">PilihMetode</string>
+    <string name="BayarNanti" translatable="false">BayarNanti</string>
+    <string name="Tunai">Tunai</string>
 </resources>

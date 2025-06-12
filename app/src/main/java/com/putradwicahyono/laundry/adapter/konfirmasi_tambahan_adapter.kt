@@ -12,7 +12,6 @@ import java.util.*
 
 class konfirmasi_tambahan_adapter(
     private val listTambahan: MutableList<ModelTambahan>,
-    private val onHapusClick: (ModelTambahan) -> Unit
 ) : RecyclerView.Adapter<konfirmasi_tambahan_adapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

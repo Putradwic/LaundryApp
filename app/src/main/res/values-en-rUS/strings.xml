@@ -154,4 +154,7 @@
     <string name="PilihPelangganDulu">Select customers first to process</string>
     <string name="PilihLayananUtama">Select the main service first to process</string>
     <string name="NamaPelanggan">Customer Name</string>
+    <string name="PilihMetode">Choose Payment Method</string>
+    <string name="BayarNanti">⏰ Pay Later</string>
+    <string name="Tunai">💵 Cash</string>
 </resources>

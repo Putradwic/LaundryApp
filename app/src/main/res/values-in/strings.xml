@@ -154,4 +154,7 @@
     <string name="PilihPelangganDulu">Pilih pelanggan terlebih dahulu untuk memproses</string>
     <string name="PilihLayananUtama">Pilih layanan utama terlebih dahulu untuk memproses</string>
     <string name="NamaPelanggan">Nama Pelanggan</string>
+    <string name="PilihMetode">Pilih Metode Pembayaran</string>
+    <string name="BayarNanti">Bayar Nanti</string>
+    <string name="Tunai">Tunai</string>
 </resources>

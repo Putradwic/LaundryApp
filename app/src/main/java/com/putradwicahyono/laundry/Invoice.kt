@@ -1,6 +1,8 @@
 package com.putradwicahyono.laundry.transaksi
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,14 +29,23 @@ class Invoice : AppCompatActivity() {
     private lateinit var tvTotalPrice: TextView
     private lateinit var adapterAdditional: konfirmasi_tambahan_adapter
 
+    // Declare variables to store intent data
+    private var namaPelanggan: String = ""
+    private var noHp: String = ""
+    private var namaLayanan: String = ""
+    private var hargaLayanan: Int = 0
+    private var listTambahan: ArrayList<ModelTambahan> = arrayListOf()
+    private var metodePembayaran: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_invoice) // We will create this layout next
+        setContentView(R.layout.activity_invoice)
 
         initViews()
         applyWindowInsets()
         displayInvoiceDetails()
+        setupClickListeners() // Add this line that was missing
     }
 
     private fun initViews() {
@@ -57,7 +68,7 @@ class Invoice : AppCompatActivity() {
     }
 
     private fun displayInvoiceDetails() {
-        // Generate a simple invoice ID (you might want a more robust solution)
+        // Generate a simple invoice ID
         val invoiceId = "INV-" + System.currentTimeMillis().toString().substring(8)
         tvInvoiceId.text = "Invoice ID: $invoiceId"
 
@@ -65,12 +76,13 @@ class Invoice : AppCompatActivity() {
         val dateFormat = SimpleDateFormat("dd MMMM yyyy, HH:mm", Locale.getDefault())
         tvInvoiceDate.text = "Date: ${dateFormat.format(Date())}"
 
-        // Retrieve data from intent
-        val namaPelanggan = intent.getStringExtra("namaPelanggan") ?: "-"
-        val noHp = intent.getStringExtra("noHp") ?: "-"
-        val namaLayanan = intent.getStringExtra("namaLayanan") ?: "-"
-        val hargaLayanan = intent.getIntExtra("hargaLayanan", 0)
-        val listTambahan = intent.getSerializableExtra("listTambahan") as? ArrayList<ModelTambahan> ?: arrayListOf()
+        // Retrieve data from intent and store in class variables
+        namaPelanggan = intent.getStringExtra("namaPelanggan") ?: "-"
+        noHp = intent.getStringExtra("noHp") ?: "-"
+        namaLayanan = intent.getStringExtra("namaLayanan") ?: "-"
+        hargaLayanan = intent.getIntExtra("hargaLayanan", 0)
+        listTambahan = intent.getSerializableExtra("listTambahan") as? ArrayList<ModelTambahan> ?: arrayListOf()
+        metodePembayaran = intent.getStringExtra("metodePembayaran") ?: "Belum dipilih"
 
         tvCustomerName.text = "${getString(R.string.Nama)} : $namaPelanggan"
         tvCustomerPhone.text = "${getString(R.string.NoHP)}: $noHp"
@@ -84,7 +96,7 @@ class Invoice : AppCompatActivity() {
         }
 
         // Setup RecyclerView for additional services
-        adapterAdditional = konfirmasi_tambahan_adapter(listTambahan) { /* No delete action in invoice */ }
+        adapterAdditional = konfirmasi_tambahan_adapter(listTambahan)
         rvAdditionalServices.layoutManager = LinearLayoutManager(this)
         rvAdditionalServices.adapter = adapterAdditional
 
@@ -94,5 +106,122 @@ class Invoice : AppCompatActivity() {
     private fun formatRupiah(amount: Int): String {
         val formatter = NumberFormat.getCurrencyInstance(Locale("in", "ID"))
         return formatter.format(amount)
+    }
+
+    private fun setupClickListeners() {
+        findViewById<Button>(R.id.btn_whatsapp).setOnClickListener {
+            sendInvoiceToWhatsApp()
+        }
+    }
+
+    private fun sendInvoiceToWhatsApp() {
+        val invoiceText = createInvoiceText()
+
+        try {
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = "text/plain"
+                setPackage("com.whatsapp")
+                putExtra(Intent.EXTRA_TEXT, invoiceText)
+
+                // Fixed variable name from noHP to noHp
+                if (noHp.isNotEmpty()) {
+                    val phoneNumber = formatPhoneNumber(noHp)
+                    putExtra("jid", "$phoneNumber@s.whatsapp.net")
+                }
+            }
+
+            startActivity(intent)
+
+        } catch (e: Exception) {
+            // Jika WhatsApp tidak terinstall, buka di aplikasi lain
+            shareInvoiceToOtherApps(invoiceText)
+        }
+    }
+
+    private fun createInvoiceText(): String {
+        val currentDate = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date())
+
+        var invoiceText = """
+        🧾 *LaundryIn*
+        ═══════════════════════
+        
+        📅 Tanggal: $currentDate
+        👤 Nama: $namaPelanggan
+        📱 No HP: $noHp
+        
+        🧺 *LAYANAN*
+        • $namaLayanan - Rp ${formatCurrency(hargaLayanan)}
+        
+    """.trimIndent()
+
+        // Tambah layanan tambahan jika ada
+        if (listTambahan.isNotEmpty()) {
+            invoiceText += "\n🛍️ *LAYANAN TAMBAHAN*\n"
+            var totalTambahan = 0
+
+            for (tambahan in listTambahan) {
+                // Fixed property name to match ModelTambahan
+                val namaTambahan = tambahan.nama_tambahan ?: "Unknown"
+                val hargaTambahan = tambahan.harga_tambahan ?: 0
+                invoiceText += "• $namaTambahan - Rp ${formatCurrency(hargaTambahan)}\n"
+                totalTambahan += hargaTambahan
+            }
+
+            val totalKeseluruhan = hargaLayanan + totalTambahan
+
+            invoiceText += """
+            
+            ═══════════════════════
+            💰 *TOTAL PEMBAYARAN*
+            
+            *TOTAL: Rp ${formatCurrency(totalKeseluruhan)}*
+            
+            💳 Metode: $metodePembayaran
+            
+            ═══════════════════════
+            Terima kasih telah menggunakan layanan kami! 🙏
+            
+        """.trimIndent()
+
+        } else {
+            invoiceText += """
+            ═══════════════════════
+            💰 *TOTAL: Rp ${formatCurrency(hargaLayanan)}*
+            💳 Metode: $metodePembayaran
+            
+            ═══════════════════════
+            Terima kasih telah menggunakan layanan kami! 🙏
+            
+        """.trimIndent()
+        }
+
+        return invoiceText
+    }
+
+    private fun formatPhoneNumber(phone: String): String {
+        var formattedPhone = phone.replace("[^0-9]".toRegex(), "")
+
+        // Ubah format nomor Indonesia
+        when {
+            formattedPhone.startsWith("08") -> formattedPhone = "62${formattedPhone.substring(1)}"
+            formattedPhone.startsWith("8") -> formattedPhone = "62$formattedPhone"
+            !formattedPhone.startsWith("62") -> formattedPhone = "62$formattedPhone"
+        }
+
+        return formattedPhone
+    }
+
+    private fun formatCurrency(amount: Int): String {
+        return NumberFormat.getNumberInstance(Locale("id", "ID")).format(amount)
+    }
+
+    private fun shareInvoiceToOtherApps(invoiceText: String) {
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, invoiceText)
+            putExtra(Intent.EXTRA_SUBJECT, "Invoice Laundry - $namaPelanggan")
+        }
+
+        startActivity(Intent.createChooser(intent, "Bagikan Invoice"))
     }
 }
