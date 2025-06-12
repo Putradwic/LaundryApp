@@ -147,7 +147,7 @@
         android:id="@+id/tv_total_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total: Rp 0"
+        android:text="total: Rp 0"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textAlignment="center"
